@@ -180,16 +180,16 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 	float4 projectionColor;
 	
 	// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-	    if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
-    {
+	   // if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
+    //{
 
 
-		// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-		projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
+	// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
+	projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
 
-		// Set the output color of this pixel to the projection texture overriding the regular color value.
-		finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-		}
+	// Set the output color of this pixel to the projection texture overriding the regular color value.
+	finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
+		//}
 
 	return finalColor;
 }
