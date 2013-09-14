@@ -11,13 +11,16 @@ float4x4 matInverseTransposeWorld; //Matriz Transpose(Invert(World))
 //Matriz de proyección del efecto mirrorball
 float4x4 matViewMirrorBall;
 float4x4 matProjMirrorBall;
+float4 mirrorBallPosition;
+float mirrorBallAttenuation = 0.5;
+float mirrorBallIntensity = 5; 
 //Textura que se proyectará
 texture mirrorBallTexture;
 
 sampler2D mirrorBallTextureSampled = sampler_state
 {
    Texture = (mirrorBallTexture);
-   	ADDRESSU = WRAP;
+	ADDRESSU = WRAP;
 	ADDRESSV = WRAP;
 	MINFILTER = LINEAR;
 	MAGFILTER = LINEAR;
@@ -56,7 +59,6 @@ float4 lightPosition; //Posicion de la luz
 float4 eyePosition; //Posicion de la camara
 float lightIntensity; //Intensidad de la luz
 float lightAttenuation; //Factor de atenuacion de la luz
-float mirrorBallIntensity = 0.5; 
 
 
 /**************************************************************************************/
@@ -165,16 +167,21 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 	   El color Alpha sale del diffuse material */
 	float4 finalColor = float4(saturate(materialEmissiveColor + ambientLight + diffuseLight) * texelColor + specularLight, materialDiffuseColor.a);
 	
+	//Calculamos la atenuación de la proyección
+
+	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
+	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
+
 	float4 projectionColor;
 	
 	// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
 
 
-        // Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-        projectionColor = tex2D(mirrorBallTextureSampled, input.projectedVector);
+		// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
+		projectionColor = tex2D(mirrorBallTextureSampled, input.projectedVector);
 
-        // Set the output color of this pixel to the projection texture overriding the regular color value.
-        finalColor = finalColor + (projectionColor * projectionColor.a * mirrorBallIntensity); 
+		// Set the output color of this pixel to the projection texture overriding the regular color value.
+		finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
 
 
 	return finalColor;

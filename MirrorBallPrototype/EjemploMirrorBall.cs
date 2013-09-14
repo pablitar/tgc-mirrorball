@@ -66,14 +66,25 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
 
             GuiController.Instance.FpsCamera.Enable = true;
 
-            GuiController.Instance.FpsCamera.setCamera(new Vector3(0, 0, -20), new Vector3(0, 0, 0));
+            GuiController.Instance.FpsCamera.setCamera(new Vector3(0, 0, -20), new Vector3(200, 0, 0));
 
+            configureModifiers();
 
             configureWall();
 
             configureMirrorBall();
 
 
+        }
+
+        private void configureModifiers()
+        {
+
+            GuiController.Instance.Modifiers.addFloat("mirrorBallIntensity", 0f, 10f, 5f);
+
+            GuiController.Instance.Modifiers.addFloat("mirrorBallAttenuation", 0f, 10f, 0.5f);
+
+            GuiController.Instance.Modifiers.addVertex3f("mirrorBallPosition", new Vector3(-1000, -1000, -1000), new Vector3(1000, 1000, 1000), new Vector3(0, 0, 0));
         }
 
         private void configureWall()
@@ -87,9 +98,17 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             configureLight(outerBox.Effect);
         }
 
+        private T getModifierValue<T>(string key)
+        {
+            return (T)GuiController.Instance.Modifiers.getValue(key);
+        }
+
         private void configureMirrorBall()
         {
-            TgcSphere aSphere = new TgcSphere(1000, Color.White, new Vector3(20, 0, 0));
+            TgcSphere aSphere = new TgcSphere(20, Color.White, getModifierValue<Vector3>("mirrorBallPosition"));
+
+            aSphere.Radius = 20.0f;
+
             aSphere.BasePoly = TgcSphere.eBasePoly.CUBE;
             
             aSphere.updateValues();
@@ -100,16 +119,15 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
 
             mirrorBall.Technique = GuiController.Instance.Shaders.getTgcMeshTechnique(mirrorBall.RenderType);
 
-            mirrorBall.Scale = new Vector3(0.02f, 0.02f, 0.02f);
             configureLight(mirrorBall.Effect);
         }
 
         private void configureLight(Effect effect)
         {
             effect.SetValue("lightColor", ColorValue.FromColor(Color.LightYellow));
-            effect.SetValue("lightPosition", TgcParserUtils.vector3ToFloat4Array(new Vector3(0, 200, 0)));
+            effect.SetValue("lightPosition", TgcParserUtils.vector3ToFloat4Array(new Vector3(100, 200, 0)));
 
-            effect.SetValue("lightIntensity", 30.0f);
+            effect.SetValue("lightIntensity", 50.0f);
             effect.SetValue("lightAttenuation", 1.0f);
 
             //Cargar variables de shader de Material. El Material en realidad deberia ser propio de cada mesh. Pero en este ejemplo se simplifica con uno comun para todos
@@ -131,6 +149,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         {
 
             mirrorBall.rotateY(FastMath.QUARTER_PI * elapsedTime);
+            mirrorBall.Position = getModifierValue<Vector3>("mirrorBallPosition");
 
             Matrix lookAtRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI / 2 * elapsedTime);
 
@@ -139,19 +158,23 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             updateEyePosition(mirrorBall.Effect);
             updateEyePosition(outerBox.Effect);
 
-            updateMirrorBallPosition(outerBox.Effect);
+            updateMirrorBallValues(outerBox.Effect);
 
             mirrorBall.render();
             outerBox.render();
 
         }
 
-        private void updateMirrorBallPosition(Effect effect)
+        private void updateMirrorBallValues(Effect effect)
         {
             Matrix viewMatrix = Matrix.LookAtLH(mirrorBall.Position, mirrorBallLookAtVector, new Vector3(0,1,0));
 
             effect.SetValue("matViewMirrorBall", viewMatrix * Matrix.Scaling(0.02f, 0.02f, 0.02f));
             effect.SetValue("matProjMirrorBall", mirrorBallProjection);
+            effect.SetValue("mirrorBallPosition", TgcParserUtils.vector3ToFloat4Array(mirrorBall.Position));
+
+            effect.SetValue("mirrorBallAttenuation", getModifierValue<float>("mirrorBallAttenuation"));
+            effect.SetValue("mirrorBallIntensity", getModifierValue<float>("mirrorBallIntensity"));
         }
 
         private static void updateEyePosition(Effect e)
