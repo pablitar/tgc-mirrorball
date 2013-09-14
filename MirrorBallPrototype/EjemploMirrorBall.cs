@@ -27,8 +27,10 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         TgcMesh outerBox;
         TgcMesh mirrorBall;
 
-        Matrix mirrorBallProjection = Matrix.PerspectiveFovLH(FastMath.PI_HALF, 1.0f, 1.0f, 100f);
-        Vector3 mirrorBallLookAtVector = new Vector3(30, 0, 0);
+        TgcFrustum mirrorBallFrustum;
+
+        Matrix mirrorBallProjection = Matrix.PerspectiveFovLH(FastMath.QUARTER_PI / 2, 1.0f, 1.0f, 300f);
+        Vector3 mirrorBallDirectionVector = new Vector3(30, 0, 0);
 
         /// <summary>
         /// Categoría a la que pertenece el ejemplo.
@@ -74,16 +76,21 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
 
             configureMirrorBall();
 
+            configureFrustum();
+        }
 
+        private void configureFrustum()
+        {
+            mirrorBallFrustum = new TgcFrustum();
+            mirrorBallFrustum.updateVolume(getMirrorBallViewMatrix(), mirrorBallProjection);
         }
 
         private void configureModifiers()
         {
 
             GuiController.Instance.Modifiers.addFloat("mirrorBallIntensity", 0f, 10f, 5f);
-
-            GuiController.Instance.Modifiers.addFloat("mirrorBallAttenuation", 0f, 10f, 0.5f);
-
+            GuiController.Instance.Modifiers.addFloat("mirrorBallAttenuation", 0f, 10f, 0.2f);
+            GuiController.Instance.Modifiers.addBoolean("showFrustum", "Show frustum", true);
             GuiController.Instance.Modifiers.addVertex3f("mirrorBallPosition", new Vector3(-1000, -1000, -1000), new Vector3(1000, 1000, 1000), new Vector3(0, 0, 0));
         }
 
@@ -151,9 +158,10 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             mirrorBall.rotateY(FastMath.QUARTER_PI * elapsedTime);
             mirrorBall.Position = getModifierValue<Vector3>("mirrorBallPosition");
 
-            Matrix lookAtRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI / 2 * elapsedTime);
+            Matrix DirectionRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI / 2 * elapsedTime);
 
-            mirrorBallLookAtVector.TransformCoordinate(lookAtRotationMatrix);
+            mirrorBallDirectionVector.TransformCoordinate(DirectionRotationMatrix);
+
 
             updateEyePosition(mirrorBall.Effect);
             updateEyePosition(outerBox.Effect);
@@ -162,19 +170,28 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
 
             mirrorBall.render();
             outerBox.render();
-
+            if (getModifierValue<Boolean>("showFrustum"))
+            {
+                mirrorBallFrustum.updateMesh(mirrorBall.Position, mirrorBall.Position + mirrorBallDirectionVector);
+                mirrorBallFrustum.render();
+            }
         }
 
         private void updateMirrorBallValues(Effect effect)
         {
-            Matrix viewMatrix = Matrix.LookAtLH(mirrorBall.Position, mirrorBallLookAtVector, new Vector3(0,1,0));
+            Matrix viewMatrix = getMirrorBallViewMatrix();
 
-            effect.SetValue("matViewMirrorBall", viewMatrix * Matrix.Scaling(0.02f, 0.02f, 0.02f));
+            effect.SetValue("matViewMirrorBall", viewMatrix);
             effect.SetValue("matProjMirrorBall", mirrorBallProjection);
             effect.SetValue("mirrorBallPosition", TgcParserUtils.vector3ToFloat4Array(mirrorBall.Position));
 
             effect.SetValue("mirrorBallAttenuation", getModifierValue<float>("mirrorBallAttenuation"));
             effect.SetValue("mirrorBallIntensity", getModifierValue<float>("mirrorBallIntensity"));
+        }
+
+        private Matrix getMirrorBallViewMatrix()
+        {
+            return Matrix.LookAtLH(mirrorBall.Position, mirrorBall.Position + mirrorBallDirectionVector, new Vector3(0, 1, 0));
         }
 
         private static void updateEyePosition(Effect e)
