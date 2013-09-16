@@ -29,7 +29,10 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
 
         TgcFrustum mirrorBallFrustum;
 
-        Matrix mirrorBallProjection = Matrix.PerspectiveFovLH(FastMath.QUARTER_PI / 2, 1.0f, 1.0f, 300f);
+        Matrix mirrorBallProjection = Matrix.PerspectiveFovLH(FastMath.PI_HALF, 1.0f, 1.0f, 300f);
+
+        //Matrix mirrorBallProjection = Matrix.OrthoLH(2f, 2f, 0.1f, 300f);
+
         Vector3 mirrorBallDirectionVector = new Vector3(30, 0, 0);
 
         /// <summary>
@@ -158,7 +161,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             mirrorBall.rotateY(FastMath.QUARTER_PI * elapsedTime);
             mirrorBall.Position = getModifierValue<Vector3>("mirrorBallPosition");
 
-            Matrix DirectionRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI / 2 * elapsedTime);
+            Matrix DirectionRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI * elapsedTime);
 
             mirrorBallDirectionVector.TransformCoordinate(DirectionRotationMatrix);
 
