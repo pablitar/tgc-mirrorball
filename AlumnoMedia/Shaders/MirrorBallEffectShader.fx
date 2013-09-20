@@ -1,3 +1,5 @@
+#define MAX_DISCO_LIGHTS 25
+
 /**************************************************************************************/
 /* Variables comunes */
 /**************************************************************************************/
@@ -8,12 +10,12 @@ float4x4 matWorldView; //Matriz World * View
 float4x4 matWorldViewProj; //Matriz World * View * Projection
 float4x4 matInverseTransposeWorld; //Matriz Transpose(Invert(World))
 
-//Matriz de proyección del efecto mirrorball
-float4x4 matViewMirrorBall;
-float4x4 matProjMirrorBall;
+//Matrices de proyección del efecto mirrorball
+float4x4 matViewProjMirrorBall[MAX_DISCO_LIGHTS];
 float4 mirrorBallPosition;
 float mirrorBallAttenuation = 0.5;
 float mirrorBallIntensity = 5; 
+
 //Textura que se proyectará
 texture mirrorBallTexture;
 
@@ -117,8 +119,7 @@ VS_OUTPUT_DIFFUSE_MAP vs_DiffuseMap(VS_INPUT_DIFFUSE_MAP input)
 	
 	//Ubicación del vértice en función de la fuente de la textura proyectada
 	output.projectedVector = mul(input.Position, matWorld);
-	output.projectedVector = mul(output.projectedVector, matViewMirrorBall);
-	output.projectedVector = mul(output.projectedVector, matProjMirrorBall);
+
 
 	return output;
 }
@@ -173,22 +174,25 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
 	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
 
-	float2 projectTexCoord;
+	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
 
-	projectTexCoord.x =  input.projectedVector.x / input.projectedVector.w / 2.0f + 0.5f;
-    projectTexCoord.y = -input.projectedVector.y / input.projectedVector.w / 2.0f + 0.5f;
+		float4 finalProjection = mul(input.projectedVector, matViewProjMirrorBall[i]);
+		
+		float2 projectTexCoord;
 
-	float4 projectionColor;
-	
-	// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-	//if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
- //   {
-		// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-		projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
+		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
+		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
 
-		// Set the output color of this pixel to the projection texture overriding the regular color value.
-		finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-	//}
+		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
+		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
+		{
+			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
+			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
+
+			// Set the output color of this pixel to the projection texture overriding the regular color value.
+			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
+		}
+	}
 
 	return finalColor;
 }
@@ -201,7 +205,7 @@ technique MIRROR_BALL_MAP
 {
    pass Pass_0
    {
-	  VertexShader = compile vs_2_0 vs_DiffuseMap();
-	  PixelShader = compile ps_2_0 ps_DiffuseMap();
+	  VertexShader = compile vs_3_0 vs_DiffuseMap();
+	  PixelShader = compile ps_3_0 ps_DiffuseMap();
    }
 }
