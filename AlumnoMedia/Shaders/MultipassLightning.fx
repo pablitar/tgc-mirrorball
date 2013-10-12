@@ -13,7 +13,7 @@ float materialSpecularExp; //Exponente de specular
 
 //SpotLight
 float3 spotLightDirection;
-float spotLightAngleCos;
+float spotLightAngle;
 float spotLightExponent;
 
 //Camera
@@ -26,9 +26,10 @@ sampler2D textureSampled = sampler_state
 	Texture = (texDiffuseMap);
 	ADDRESSU = WRAP;
 	ADDRESSV = WRAP;
-	MINFILTER = LINEAR;
-	MAGFILTER = LINEAR;
+	MINFILTER = ANISOTROPIC;
+	MAGFILTER = ANISOTROPIC;
 	MIPFILTER = LINEAR;
+	MAXANISOTROPY = 16;
 };
 
 float4x4 matWorld; //Matriz de transformacion World
@@ -76,7 +77,7 @@ VS_OUTPUT vs_Common(VS_INPUT input)
 	output.Texcoord = input.Texcoord;
 
 	//Posicion pasada a World-Space (necesaria para atenuación por distancia)
-	output.WorldPosition = mul(input.Position, matWorld);
+	output.WorldPosition = input.Position.xyz;
 	
 	output.Normal = input.Normal;
 	
@@ -90,6 +91,19 @@ float4 ps_Ambient(VS_OUTPUT input) : COLOR0
 	return float4(saturate(materialAmbientColor + materialEmissiveColor),1)  * tex2D(textureSampled, input.Texcoord);
 }
 
+float3 computeSpecularComponent(LightParams params) 
+{
+	//Componente Specular (Phong Blinn): (N dot H)^exp
+	return params.n_dot_l <= 0.0
+			? float3(0.0, 0.0, 0.0)
+			: (params.intensity * lightColor * materialSpecularColor * pow(max( 0.0, params.n_dot_h), materialSpecularExp));
+}
+
+//Funcion para calcular color RGB de Diffuse de un Pixel
+float3 computeDiffuseComponent(LightParams params)
+{	
+	return params.intensity * lightColor * materialDiffuseColor.rgb * max(0.0, params.n_dot_l);
+}
 
 //Calcula los parámetros comunes para las luces
 LightParams computeLightParams(float3 normal, float3 position)
@@ -107,20 +121,6 @@ LightParams computeLightParams(float3 normal, float3 position)
 	return result;
 }
 
-//Funcion para calcular color RGB de Diffuse de un Pixel
-float3 computeDiffuseComponent(LightParams params)
-{	
-	return params.intensity * lightColor * materialDiffuseColor.rgb * max(0.0, params.n_dot_l);
-}
-
-float3 computeSpecularComponent(LightParams params) 
-{
-	//Componente Specular (Phong Blinn): (N dot H)^exp
-	return params.n_dot_l <= 0.0
-			? float3(0.0, 0.0, 0.0)
-			: (params.intensity * lightColor * materialSpecularColor * pow(max( 0.0, params.n_dot_h), materialSpecularExp));
-}
-
 float4 texel(float3 light, float2 texCoord)
 {
 	float4 texelColor = tex2D(textureSampled, texCoord);
@@ -131,13 +131,31 @@ float4 texel(float3 light, float2 texCoord)
 
 float4 ps_Point(VS_OUTPUT input) : COLOR0
 {
-	LightParams params = computeLightParams(input.WorldNormal, input.WorldPosition);
-	
+	LightParams params = computeLightParams(input.Normal, input.WorldPosition);
+
 	float3 diffuse = computeDiffuseComponent(params);
 	float3 specular = computeSpecularComponent(params);
 	
 	return texel(diffuse + specular, input.Texcoord);
 }
+
+
+float4 ps_Spot(VS_OUTPUT input) : COLOR0
+{
+
+	LightParams params = computeLightParams(input.Normal, input.WorldPosition);
+	
+	float3 diffuse = computeDiffuseComponent(params);
+	float3 specular = computeSpecularComponent(params);
+
+	float spotAngle = acos(dot(normalize(-spotLightDirection), params.Ln));
+	float spotScale = (spotLightAngle > spotAngle) 
+					? pow(spotLightAngle - spotAngle, spotLightExponent)
+					: 0.0;
+
+    return texel((diffuse + specular) * spotScale, input.Texcoord);
+}
+
 
 technique MultiPassLight
 {
@@ -153,11 +171,15 @@ technique MultiPassLight
         DestBlend=One;	
 		PixelShader = compile ps_3_0 ps_Point();
     }
-    /*pass Spot
+    
+	pass Pass_2
     {
+		AlphaBlendEnable=True;
+		SrcBlend=One;
+        DestBlend=One;	
         PixelShader = compile ps_3_0 ps_Spot();
     }
-	
+	/*
 	pass MirrorBall
 	{
 		VertexShader = compile vs_3_0 vs_MirrorBall();
