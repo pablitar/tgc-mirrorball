@@ -89,6 +89,9 @@
   <ItemGroup>
     <Compile Include="MiGrupo\EjemploAlumno.cs" />
     <Compile Include="MirrorBallPrototype\EjemploMirrorBall.cs" />
+    <Compile Include="MultipassPrototype\Lights.cs" />
+    <Compile Include="MultipassPrototype\MultipassAndMirrorball.cs" />
+    <Compile Include="MultipassPrototype\TgcRTLMesh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
