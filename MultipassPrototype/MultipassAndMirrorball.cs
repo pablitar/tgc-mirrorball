@@ -94,8 +94,8 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
         private void configureLights()
         {
 
-            lights.Add(new PointLight(Color.White, 0.5f, 1, new Vector3(-200, 200, 0)));
-            //lights.Add(new PointLight(Color.Yellow, 0.5f, 1, new Vector3(200, 200, 0)));
+            lights.Add(new PointLight(Color.White, 40f, 1f, new Vector3(-200, 200, 0)));
+            lights.Add(new PointLight(Color.Yellow, 40f, 1f, new Vector3(-200, 200, 0)));
             Random r = new Random();
 
             Vector3 directionVector = new Vector3(1, -1, 0);
@@ -105,11 +105,20 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
             directionVector = createSpotLight(Color.Yellow, r, directionVector);
             directionVector = createSpotLight(Color.Beige, r, directionVector);
             createSpotLight(Color.Blue, r, directionVector);
+
+            addSpotLight(new SpotLight(Color.Tomato, 40f, 0.01f, new Vector3(200, 0, 0), new Vector3(0, 0, -1), FastMath.QUARTER_PI * 2 / 3, 3f), (spotLight, elapsed) =>
+            {
+                Vector3 lightPos = GuiController.Instance.FpsCamera.getPosition();
+                Plane v = GuiController.Instance.Frustum.NearPlane;
+
+                spotLight.Position = lightPos;
+                spotLight.Direction = new Vector3(v.A, v.B, v.C);
+            });
         }
 
         private Vector3 createSpotLight(Color color, Random r, Vector3 directionVector)
         {
-            addSpotLight(new SpotLight(color, 9f, 2, new Vector3(0, 200, 0), directionVector, FastMath.QUARTER_PI, 3), rotateLeft((float)(FastMath.TWO_PI * r.NextDouble() + 0.1)));
+            addSpotLight(new SpotLight(color, 60f, 0.1f, new Vector3(0, 200, 0), directionVector, FastMath.QUARTER_PI, 3), rotateLeft((float)(FastMath.TWO_PI * r.NextDouble() + 0.1)));
             directionVector.TransformCoordinate(Matrix.RotationY(FastMath.TWO_PI / 3));
             return directionVector;
         }

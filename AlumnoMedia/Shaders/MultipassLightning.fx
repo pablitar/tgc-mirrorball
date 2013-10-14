@@ -110,7 +110,7 @@ LightParams computeLightParams(float3 normal, float3 position)
 {
 	LightParams result;
 	result.N = normalize(normal);
-	result.L = normalize(lightPosition.xyz - position);
+	result.L = lightPosition.xyz - position;
 	result.Ln = normalize(result.L);
 	result.V = eyePosition.xyz - position;
 	result.Hn = normalize(result.V + result.L);
@@ -149,7 +149,7 @@ float4 ps_Spot(VS_OUTPUT input) : COLOR0
 	float3 specular = computeSpecularComponent(params);
 
 	float spotAngle = acos(dot(normalize(-spotLightDirection), params.Ln));
-	float spotScale = (spotLightAngle > spotAngle) 
+	float spotScale = (  spotLightAngle > spotAngle) 
 					? pow(spotLightAngle - spotAngle, spotLightExponent)
 					: 0.0;
 

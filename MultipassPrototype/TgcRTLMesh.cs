@@ -11,7 +11,7 @@ using Microsoft.DirectX;
 namespace AlumnoEjemplos.MultipassPrototype
 {
 
-    public class TgcRTLMesh : TgcMesh, IRenderObject
+    public class TgcRTLMesh : TgcMesh
     {
 
         public static readonly int AMBIENT = 0;
