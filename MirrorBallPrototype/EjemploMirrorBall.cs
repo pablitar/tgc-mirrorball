@@ -79,7 +79,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         {
             //GuiController.Instance: acceso principal a todas las herramientas del Framework
             
-            mirrorBallEffect = TgcShaders.loadEffect(GuiController.Instance.AlumnoEjemplosMediaDir + "\\Shaders\\MultipassLightning.fx");
+            mirrorBallEffect = TgcShaders.loadEffect(GuiController.Instance.AlumnoEjemplosMediaDir + "\\Shaders\\MirrorBallEffectShader.fx");
 
             GuiController.Instance.FpsCamera.Enable = true;
 
@@ -162,7 +162,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             TgcMesh wallMesh = TgcBox.fromSize(center, size, TgcTexture.createTexture(alumnoMediaFolder + "\\Wall.jpg")).toMesh("outerBox");
             configureMirrorBallReception(wallMesh);
 
-            //wallMesh.Effect.SetValue("mirrorBallTexture", TextureLoader.FromFile(d3dDevice, alumnoMediaFolder + "\\mirrorBallLights.png"));
+            wallMesh.Effect.SetValue("mirrorBallTexture", TextureLoader.FromFile(d3dDevice, alumnoMediaFolder + "\\mirrorBallLights.png"));
 
             return wallMesh; 
         }
@@ -170,7 +170,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         private void configureMirrorBallReception(TgcMesh wallMesh)
         {
             wallMesh.Effect = mirrorBallEffect;
-            wallMesh.Technique = "MultiPassLight";
+            wallMesh.Technique = "MIRROR_BALL_MAP";
 
             configureLight(wallMesh.Effect);
         }
@@ -202,16 +202,17 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         private void configureLight(Effect effect)
         {
             effect.SetValue("lightColor", ColorValue.FromColor(Color.White));
-            effect.SetValue("lightPosition", TgcParserUtils.vector3ToFloat4Array(new Vector3(200, 200, 0)));
+            effect.SetValue("lightPosition", TgcParserUtils.vector3ToFloat4Array(new Vector3(100, 200, 0)));
 
-            effect.SetValue("lightIntensity", 30.0f);
-            effect.SetValue("lightAttenuation", 55.0f);
+            effect.SetValue("lightIntensity", 50.0f);
+            effect.SetValue("lightAttenuation", 1.0f);
 
             //Cargar variables de shader de Material. El Material en realidad deberia ser propio de cada mesh. Pero en este ejemplo se simplifica con uno comun para todos
-            effect.SetValue("materialAmbientColor", ColorValue.FromColor(Color.FromArgb(255,20,20,20)));
+            effect.SetValue("materialEmissiveColor", ColorValue.FromColor(Color.Black));
+            effect.SetValue("materialAmbientColor", ColorValue.FromColor(Color.White));
             effect.SetValue("materialDiffuseColor", ColorValue.FromColor(Color.White));
-            effect.SetValue("materialSpecularColor", ColorValue.FromColor(Color.White));
-            effect.SetValue("materialSpecularExp", 10.0f);
+            effect.SetValue("materialSpecularColor", ColorValue.FromColor(Color.LightGray));
+            effect.SetValue("materialSpecularExp", 1.0f);
         }
 
 
@@ -241,7 +242,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             foreach(TgcMesh wall in meshes) {
 
                 updateEyePosition(wall.Effect);
-                //updateMirrorBallValues(wall.Effect, viewProjMatrix);
+                updateMirrorBallValues(wall.Effect, viewProjMatrix);
                 updateSpotLightValues(wall.Effect, viewProjMatrix);
 
                 wall.render();
@@ -268,21 +269,21 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             Plane v = GuiController.Instance.Frustum.NearPlane;
             Vector3 lightPos = GuiController.Instance.FpsCamera.Position;
 
-            //effect.SetValue("spotLightColor", ColorValue.FromColor((Color)GuiController.Instance.Modifiers["spotLightColor"]));
+            effect.SetValue("spotLightColor", ColorValue.FromColor((Color)GuiController.Instance.Modifiers["spotLightColor"]));
                         
-            effect.SetValue("spotLightDirection", new float[] { v.A, v.B, v.C, v.D });
-            //effect.SetValue("spotLightPosition", TgcParserUtils.vector3ToFloat4Array(lightPos));
-            //if ((bool)GuiController.Instance.Modifiers["linterna"])
-            //{
-            //    effect.SetValue("spotLightIntensity", (float)GuiController.Instance.Modifiers["spotLightIntensity"]);
-            //}
-            //else
-            //{
-            //    effect.SetValue("spotLightIntensity", 0);
-            //}
+            effect.SetValue("spotLightDir", new float[] { v.A, v.B, v.C, v.D });
+            effect.SetValue("spotLightPosition", TgcParserUtils.vector3ToFloat4Array(lightPos));
+            if ((bool)GuiController.Instance.Modifiers["linterna"])
+            {
+                effect.SetValue("spotLightIntensity", (float)GuiController.Instance.Modifiers["spotLightIntensity"]);
+            }
+            else
+            {
+                effect.SetValue("spotLightIntensity", 0);
+            }
 
-            //effect.SetValue("spotLightAttenuation", (float)GuiController.Instance.Modifiers["spotLightAttenuation"]);
-            effect.SetValue("spotLightAngle", FastMath.ToRad((float)GuiController.Instance.Modifiers["spotAngle"]));
+            effect.SetValue("spotLightAttenuation", (float)GuiController.Instance.Modifiers["spotLightAttenuation"]);
+            effect.SetValue("spotLightAngleCos", FastMath.ToRad((float)GuiController.Instance.Modifiers["spotAngle"]));
             effect.SetValue("spotLightExponent", (float)GuiController.Instance.Modifiers["spotExponent"]);
         }
 

@@ -210,6 +210,16 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
         /// </summary>
         public override void close()
         {
+            multipassEffect.Dispose();
+
+            foreach (TgcMesh mesh in meshes)
+            {
+                mesh.dispose();
+            }
+
+            lights.Clear();
+
+            spotLightTransformations.Clear();
 
         }
 
