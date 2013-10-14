@@ -44,7 +44,6 @@ namespace AlumnoEjemplos.MultipassPrototype
             //TODO: Autoinicializar el efecto
         }
 
-        //TODO: Horrible copy pasta. Hay que ver si hay alguna forma mejor de hacerlo, pero en principio necesito demasiado control.
         public void renderPass(int pass)
         {
 
@@ -84,6 +83,7 @@ namespace AlumnoEjemplos.MultipassPrototype
 
         }
 
+        //TODO: Horrible copy pasta. Hay que ver si hay alguna forma mejor de hacerlo, pero en principio necesito demasiado control.
         public new void render()
         {
             if (!enabled)

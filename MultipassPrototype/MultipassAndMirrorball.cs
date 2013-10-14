@@ -28,8 +28,7 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
         Color ambientColor = Color.FromArgb(255, 20, 20, 20);
 
         List<PointLight> lights = new List<PointLight>();
-
-        SpotLight spotLight;
+        Dictionary<SpotLight, Action<SpotLight, float>> spotLightTransformations = new Dictionary<SpotLight, Action<SpotLight, float>>();
 
         List<TgcRTLMesh> meshes = new List<TgcRTLMesh>();
         private Effect multipassEffect;
@@ -82,12 +81,44 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
 
         }
 
+        private Action<SpotLight, float> rotateLeft(float speed)
+        {
+            return (spotLight, elapsedTime) =>
+            {
+                Matrix directionRotationMatrix = Matrix.RotationY(speed * elapsedTime);
+
+                spotLight.transformDirection(directionRotationMatrix);
+            };
+        }
+
         private void configureLights()
         {
+
             lights.Add(new PointLight(Color.White, 0.5f, 1, new Vector3(-200, 200, 0)));
-            lights.Add(new PointLight(Color.Yellow, 0.5f, 1, new Vector3(200, 200, 0)));
-            spotLight = new SpotLight(Color.Red, 1f, 2, new Vector3(0, 200, 0), new Vector3(1, 1, 0), FastMath.QUARTER_PI, 3);
-            lights.Add(spotLight);
+            //lights.Add(new PointLight(Color.Yellow, 0.5f, 1, new Vector3(200, 200, 0)));
+            Random r = new Random();
+
+            Vector3 directionVector = new Vector3(1, -1, 0);
+
+            directionVector = createSpotLight(Color.Red, r, directionVector);
+            directionVector = createSpotLight(Color.Green, r, directionVector);
+            directionVector = createSpotLight(Color.Yellow, r, directionVector);
+            directionVector = createSpotLight(Color.Beige, r, directionVector);
+            createSpotLight(Color.Blue, r, directionVector);
+        }
+
+        private Vector3 createSpotLight(Color color, Random r, Vector3 directionVector)
+        {
+            addSpotLight(new SpotLight(color, 9f, 2, new Vector3(0, 200, 0), directionVector, FastMath.QUARTER_PI, 3), rotateLeft((float)(FastMath.TWO_PI * r.NextDouble() + 0.1)));
+            directionVector.TransformCoordinate(Matrix.RotationY(FastMath.TWO_PI / 3));
+            return directionVector;
+        }
+
+        private void addSpotLight(SpotLight light, Action<SpotLight, float> transformation)
+        {
+            lights.Add(light);
+
+            spotLightTransformations.Add(light, transformation);
         }
 
         private void configureModifiers()
@@ -138,10 +169,8 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
         /// <param name="elapsedTime">Tiempo en segundos transcurridos desde el último frame</param>
         public override void render(float elapsedTime)
         {
-            
-            Matrix directionRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI * elapsedTime);
 
-            spotLight.Direction.TransformCoordinate(directionRotationMatrix);
+            updateLights(elapsedTime);
 
             foreach (TgcRTLMesh wall in meshes)
             {
@@ -151,6 +180,14 @@ namespace AlumnoEjemplos.RideTheLightning.MultipassAndMirrorball
                 wall.render();
             }
 
+        }
+
+        private void updateLights(float elapsed)
+        {
+            foreach (KeyValuePair<SpotLight, Action<SpotLight, float>> entry in spotLightTransformations)
+            {
+                entry.Value.Invoke(entry.Key, elapsed);
+            }
         }
 
         private static void updateEyePosition(Effect e)

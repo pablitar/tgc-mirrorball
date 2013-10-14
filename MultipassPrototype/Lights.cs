@@ -105,9 +105,16 @@ namespace AlumnoEjemplos.MultipassPrototype
             effect.SetValue("spotLightExponent", this.exponent);
         }
 
+        public void transformDirection(Matrix transformationMatrix)
+        {
+            direction.TransformCoordinate(transformationMatrix);
+        }
+
         public override int kind()
         {
             return TgcRTLMesh.SPOT;
         }
+
+
     }
 }
