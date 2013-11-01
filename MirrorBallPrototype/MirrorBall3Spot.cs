@@ -129,7 +129,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             GuiController.Instance.Modifiers.addBoolean("linterna", "linterna", false);
 
             GuiController.Instance.Modifiers.addColor("spotLightColor", Color.White);
-            GuiController.Instance.Modifiers.addFloat("spotLightIntensity", 0, 150, 35);
+            GuiController.Instance.Modifiers.addFloat("spotLightIntensity", 0, 150, 15);
             GuiController.Instance.Modifiers.addFloat("spotLightAttenuation", 0.1f, 2, 0.3f);
             GuiController.Instance.Modifiers.addFloat("spotAngle", 0, 180, 39f);
             GuiController.Instance.Modifiers.addFloat("spotExponent", 0, 20, 7f);
@@ -212,7 +212,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
             lightColors[1] = ColorValue.FromColor(Color.Blue);
             lightColors[2] = ColorValue.FromColor(Color.Green);
             lightColors[3] = ColorValue.FromColor(Color.Yellow);
-            pointLightPositions[0] = new Vector4(200f,0f,0f,0f);
+            pointLightPositions[0] = new Vector4(160f,0f,0f,0f);
             spotLightDir[0] = new Vector4(-1f, 0f, 0f, 0f);
             pointLightPositions[1] = new Vector4(-200f, 50f, 0f, 0f);
             spotLightDir[1] = new Vector4(0.3f, -1f, 0.3f, 0f);

@@ -18,6 +18,7 @@ float mirrorBallIntensity = 5;
 
 //Textura que se proyectara
 texture mirrorBallTexture;
+static const float PI_HALF = 1.5707963268f;
 sampler2D mirrorBallTextureSampled = sampler_state
 {
    Texture = (mirrorBallTexture);
@@ -122,7 +123,7 @@ LightingResult calcularSpot(int i, float3 Nn, float3 viewVector, float3 worldPos
 	float intensity = lightIntensity[i] * spotAtten / distAtten;
 
 	//Ambient
-	res.ambientLight = intensity * lightColor[i] * materialAmbientColor;
+	res.ambientLight = (dot(spotLightDir[i].xyz, Nn) <= 0.0?1:0) * intensity * lightColor[i] * materialAmbientColor;
 	
 	//Diffuse (N dot L)
 	float3 n_dot_l = dot(Nn, Ln);
@@ -138,6 +139,40 @@ LightingResult calcularSpot(int i, float3 Nn, float3 viewVector, float3 worldPos
 			
 	return res;
 }
+
+float4 calcularBola(float4 finalColor, float3 worldPosition, float3 worldNormal){
+
+	float3 ln = normalize(mirrorBallPosition.xyz - worldPosition);
+        
+    float ballAngle = dot(ln, worldNormal);
+        
+    //Calculamos la atenuación de la proyección
+    float distAttenMirrorBall = length(mirrorBallPosition.xyz - worldPosition) * mirrorBallAttenuation;
+    float finalIntensity = (ballAngle <= 0.0?0:1) * (mirrorBallIntensity / distAttenMirrorBall); //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
+	
+	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
+
+		float4 finalProjection = mul(worldPosition, matViewProjMirrorBall[i]);
+		
+		float2 projectTexCoord;
+
+		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
+		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
+
+		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
+		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
+		{
+			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
+			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
+
+			// Set the output color of this pixel to the projection texture overriding the regular color value.
+			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
+		}
+	}
+	return finalColor;
+}
+
+
 
 /**************************************************************************************/
 /* VERTEX_COLOR */
@@ -227,29 +262,8 @@ float4 ps_3SpotYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-
-	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
-	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
-
-	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
-
-		float4 finalProjection = mul(input.WorldPosition, matViewProjMirrorBall[i]);
-		
-		float2 projectTexCoord;
-
-		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
-		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
-
-		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
-		{
-			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
-
-			// Set the output color of this pixel to the projection texture overriding the regular color value.
-			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-		}
-	}
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	
 
 	return finalColor;
 }
@@ -280,29 +294,7 @@ float4 ps_2SpotDiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-
-	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
-	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
-
-	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
-
-		float4 finalProjection = mul(input.WorldPosition, matViewProjMirrorBall[i]);
-		
-		float2 projectTexCoord;
-
-		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
-		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
-
-		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
-		{
-			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
-
-			// Set the output color of this pixel to the projection texture overriding the regular color value.
-			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-		}
-	}
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
 
 	return finalColor;
 }
@@ -333,30 +325,8 @@ float4 ps_Spot2DiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-
-	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
-	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
-
-	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
-
-		float4 finalProjection = mul(input.WorldPosition, matViewProjMirrorBall[i]);
-		
-		float2 projectTexCoord;
-
-		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
-		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
-
-		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
-		{
-			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
-
-			// Set the output color of this pixel to the projection texture overriding the regular color value.
-			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-		}
-	}
-
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	
 	return finalColor;
 }
 
@@ -386,29 +356,7 @@ float4 ps_3DiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-
-	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
-	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
-
-	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
-
-		float4 finalProjection = mul(input.WorldPosition, matViewProjMirrorBall[i]);
-		
-		float2 projectTexCoord;
-
-		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
-		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
-
-		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
-		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
-		{
-			// Sample the color value from the projection texture using the sampler at the projected texture coordinate location.
-			float4 projectionColor = tex2D(mirrorBallTextureSampled, projectTexCoord);
-
-			// Set the output color of this pixel to the projection texture overriding the regular color value.
-			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
-		}
-	}
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
 
 	return finalColor;
 }
