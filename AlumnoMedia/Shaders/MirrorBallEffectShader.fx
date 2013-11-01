@@ -19,6 +19,8 @@ float mirrorBallIntensity = 5;
 //Textura que se proyectará
 texture mirrorBallTexture;
 
+static const float PI_HALF = 1.5707963268f;
+
 sampler2D mirrorBallTextureSampled = sampler_state
 {
    Texture = (mirrorBallTexture);
@@ -178,11 +180,14 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 	   El color Alpha sale del diffuse material */
 	float4 finalColor = float4(saturate(materialEmissiveColor + ambientLight + diffuseLight) * texelColor + specularLight, materialDiffuseColor.a);
 	
+	float3 ballVector = mirrorBallPosition.xyz - input.WorldPosition;
+	
+	float ballAngle = acos(dot(normalize(ballVector), input.WorldNormal));
+	
 	//Calculamos la atenuación de la proyección
-
-	float distAttenMirrorBall = length(mirrorBallPosition.xyz - input.WorldPosition) * mirrorBallAttenuation;
-	float finalIntensity = mirrorBallIntensity / distAttenMirrorBall; //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
-
+	float distAttenMirrorBall = length(ballVector) * mirrorBallAttenuation;
+	float finalIntensity = (ballAngle <= PI_HALF?1:0) * (mirrorBallIntensity / distAttenMirrorBall); //Dividimos intensidad sobre distancia (lo hacemos lineal pero tambien podria ser i/d^2)
+	
 	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
 
 		float4 finalProjection = mul(input.projectedVector, matViewProjMirrorBall[i]);
@@ -191,6 +196,8 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 
 		projectTexCoord.x =  finalProjection.x / finalProjection.w / 2.0f + 0.5f;
 		projectTexCoord.y = -finalProjection.y / finalProjection.w / 2.0f + 0.5f;
+		
+
 
 		// Determine if the projected coordinates are in the 0 to 1 range.  If it is then this pixel is inside the projected view port.
 		if((saturate(projectTexCoord.x) == projectTexCoord.x) && (saturate(projectTexCoord.y) == projectTexCoord.y))
@@ -202,6 +209,7 @@ float4 ps_DiffuseMap(PS_DIFFUSE_MAP input) : COLOR0
 			finalColor = finalColor + (projectionColor * projectionColor.a * finalIntensity); 
 		}
 	}
+	
 
 	return finalColor;
 }
