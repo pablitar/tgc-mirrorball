@@ -11,6 +11,7 @@ using TgcViewer.Utils.TgcGeometry;
 using System.IO;
 using TgcViewer.Utils.Shaders;
 using TgcViewer.Utils.Interpolation;
+using AlumnoEjemplos.MiGrupo;
 
 namespace Examples.Lights
 {
@@ -365,26 +366,7 @@ namespace Examples.Lights
             scene.disposeAll();            
         }
 
-        /// <summary>
-        /// Estructura auxiliar para informacion de luces
-        /// </summary>
-        public class LightData
-        {
-            public Vector3 pos;
-            public TgcBoundingBox aabb;
-            public Color color;
-            public Boolean spot;
-            public Vector3 direccion;
-        }
 
-        /// <summary>
-        /// Estructura auxiliar para guardar un mesh y sus tres luces mas cercanas
-        /// </summary>
-        public class MeshLightData
-        {
-            public TgcMesh mesh;
-            public List<LightData> lights;
-        }
     }
 
     
