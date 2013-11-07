@@ -20,29 +20,30 @@ namespace AlumnoEjemplos.MiGrupo
         String zona1 = "";
         String zona2 = "";
         String zona3 = "";
-        String constLuz = "light";
-        String shaderUrl = GuiController.Instance.AlumnoEjemplosMediaDir + "Shaders\\shaderIntegrador.fx";
+        String constLuz = "lights";
+        
+       // String shaderUrl = GuiController.Instance.AlumnoEjemplosMediaDir + "Shaders\\shaderIntegrador.fx";
+       String shaderUrl = GuiController.Instance.AlumnoEjemplosMediaDir + "RideTheLightning\\Shaders\\shaderFinal.fx";
+       public TgcScene scene;
+       public Effect shader;
 
-        TgcScene scene;
-        Effect effect;
-
-        List<MeshLightData> meshesZona1;
-        List<LightData> lucesZona1 = new List<LightData>();
-        List<MeshLightData> meshesZona2;
-        List<LightData> lucesZona2 = new List<LightData>();
-        List<MeshLightData> meshesZona3;
-        List<LightData> lucesZona3 = new List<LightData>();
+      public List<MeshLightData> meshesZona1 = new List<MeshLightData>();
+      public List<LightData> lucesZona1 = new List<LightData>();
+      public List<MeshLightData> meshesZona2 = new List<MeshLightData>();
+      public List<LightData> lucesZona2 = new List<LightData>();
+      public List<MeshLightData> meshesZona3 = new List<MeshLightData>();
+      public List<LightData> lucesZona3 = new List<LightData>();
 
 
-        public void cargarEscena(String zona1, String zona2, String zona3){
+        public void cargarEscena(String zona1, String zona2, String zona3, String dirEscena, String nombreEscena){
 
             this.zona1 = zona1;
             this.zona2 = zona2;
             this.zona3 = zona3;
 
             //Cargar escenario, pero inicialmente solo hacemos el parser, para separar los objetos que son solo luces y no meshes
-            string scenePath = GuiController.Instance.AlumnoEjemplosDir + "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\Deposito-TgcScene.xml";
-            string mediaPath = GuiController.Instance.AlumnoEjemplosDir + "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\";
+            string scenePath = GuiController.Instance.AlumnoEjemplosDir + dirEscena + nombreEscena;            
+            string mediaPath = GuiController.Instance.AlumnoEjemplosDir + dirEscena;
             TgcSceneParser parser = new TgcSceneParser();
             TgcSceneData sceneData = parser.parseSceneFromString(File.ReadAllText(scenePath));
 
@@ -57,30 +58,15 @@ namespace AlumnoEjemplos.MiGrupo
                 if (meshData.layerName.Equals(zona1+constLuz))
                 {
                     //Guardar datos de luz de zona 1
-                    LightData light = new LightData();
-                    light.color = Color.FromArgb((int)meshData.color[0], (int)meshData.color[1], (int)meshData.color[2]);
-                    light.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
-                    light.pos = light.aabb.calculateBoxCenter();
-                    light.spot = meshData.userProperties["esSpot"].Equals("SI");
-                    light.direccion = convertirDireccion(meshData.userProperties["dir"]);
+                    LightData light = new LightData(meshData);                   
                     lucesZona1.Add(light);
                 }else if(meshData.layerName.Equals(zona2+constLuz)){
                     //Guardar datos de luz de zona 2
-                    LightData light = new LightData();
-                    light.color = Color.FromArgb((int)meshData.color[0], (int)meshData.color[1], (int)meshData.color[2]);
-                    light.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
-                    light.pos = light.aabb.calculateBoxCenter();
-                    light.spot = meshData.userProperties["esSpot"].Equals("SI");
-                    light.direccion = convertirDireccion(meshData.userProperties["dir"]);
+                    LightData light = new LightData(meshData);                    
                     lucesZona2.Add(light);
                 }else if(meshData.layerName.Equals(zona3+constLuz)){
                     //Guardar datos de luz de zona 3
-                    LightData light = new LightData();
-                    light.color = Color.FromArgb((int)meshData.color[0], (int)meshData.color[1], (int)meshData.color[2]);
-                    light.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
-                    light.pos = light.aabb.calculateBoxCenter();
-                    light.spot = meshData.userProperties["esSpot"].Equals("SI");
-                    light.direccion = convertirDireccion(meshData.userProperties["dir"]);
+                    LightData light = new LightData(meshData);                   
                     lucesZona3.Add(light);
                 } //Es un mesh real, agregar a array definitivo
                 else
@@ -97,7 +83,10 @@ namespace AlumnoEjemplos.MiGrupo
             //Ahora si cargar meshes reales            
             TgcSceneLoader loader = new TgcSceneLoader();
             scene = loader.loadScene(sceneData, mediaPath);
-            Effect shader = TgcShaders.loadEffect(shaderUrl);
+            GuiController.Instance.Logger.log("Empieza compilacion de shader", Color.Red);
+            shader = TgcShaders.loadEffect(shaderUrl);
+            GuiController.Instance.Logger.log("Fin compilacion de shader", Color.Red);
+            shader.SetValue("mirrorBallTexture", TextureLoader.FromFile(GuiController.Instance.D3dDevice, GuiController.Instance.AlumnoEjemplosMediaDir + "\\mirrorBallLights.png"));
 
             //Pre-calculamos las 3 luces mas cercanas de cada mesh y cargamos el Shader
             
@@ -112,7 +101,8 @@ namespace AlumnoEjemplos.MiGrupo
 
                 meshData.mesh.Effect = shader;
                 //esto debe ser modificado una vez que tengamos la escena para elegir bien las tecnicas
-                meshData.mesh.Effect.Technique = elegirTecnica(meshData.lights);
+               // meshData.mesh.Effect.Technique = elegirTecnica(meshData);
+             
                 //separados por zona, no se porqué, capaz para optimizar, no se
                 if (mesh.Layer.Equals(this.zona1))
                 {                    
@@ -131,20 +121,12 @@ namespace AlumnoEjemplos.MiGrupo
 
         }
 
-        public Vector3 convertirDireccion(String dir)
-        {
-            Vector3 result = new Vector3();
-            String[] vector = dir.Split(',');
-            result.X = float.Parse(vector[0]);
-            result.Y = float.Parse(vector[1]);
-            result.Z = float.Parse(vector[2]);
-            return result;
-        }
+       
         private List<LightData> seleccionarListaLuces(String layer)
         {
-            if(layer.Equals(this.zona1 + constLuz)){
+            if(layer.Equals(this.zona1)){
                 return lucesZona1;
-            }else if(layer.Equals(this.zona2 + constLuz)){
+            }else if(layer.Equals(this.zona2)){
                 return lucesZona2;
             }else{
                 return lucesZona3;
@@ -166,7 +148,7 @@ namespace AlumnoEjemplos.MiGrupo
                     if (result.Contains(light))
                         continue;
 
-                    float distSq = Vector3.LengthSq(pos - light.pos);
+                    float distSq = Vector3.LengthSq(pos - new Vector3(light.pos.X, light.pos.Y, light.pos.Z));
                     if (distSq < minDist)
                     {
                         minDist = distSq;
@@ -180,28 +162,60 @@ namespace AlumnoEjemplos.MiGrupo
             return result;
         }
 
-        private String elegirTecnica(List<LightData> luces)
+        public String elegirTecnica(MeshLightData mesh)
         {
             int cantSpot = 0;
             String resultado;
-            foreach(LightData ld in luces){
+            foreach(LightData ld in mesh.lights){
                 if (ld.spot)
                 {
                     cantSpot++;
                 }
             }
             switch (cantSpot){
-                case 0: resultado = "3Diffuse";
+                case 0:
+                    if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                    {
+                        resultado = "TRES_DIFFUSE_Y_BOLA";
+                    }
+                    else
+                    {
+                        resultado = "3Diffuse";
+                    }
+                    
                     break;
-                case 1:resultado = "1Spot2Diffuse";
+                case 1: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                    {
+                        resultado = "SPOT_DOS_DIFFUSE_Y_BOLA";
+                    }
+                    else
+                    {
+                        resultado = "1Spot2Diffuse";
+                    }
                     break;
-                case 2:resultado = "2Spot1Diffuse";
+                case 2: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                    {
+                        resultado = "DOS_SPOT_DIFFUSE_Y_BOLA";
+                    }
+                    else
+                    {
+                        resultado = "2SpotDiffuse";
+                    }
                     break;
-                default: resultado = "3Spot";
+                default: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                    {
+                        resultado = "TRES_SPOT_Y_BOLA";
+                    }
+                    else
+                    {
+                        resultado = "3Spot";
+                    }
                     break;
             }
             return resultado;
         }
+      
+        
         
 
     }
