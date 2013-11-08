@@ -1,0 +1,941 @@
+<tgcScene>
+	<name>asd</name>
+	<texturesExport enabled='true' dir='Textures'/>
+	<lightmapExport enabled='false' dir='LightMaps'/>
+	<sceneBoundingBox min='[10,-0.704224,0]' max='[760,100,500]'/>
+	<materials count='14'>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>beechwood_mysticBrown.png</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Masonry.Unit Masonry.Brick.Modular.Herringbone.2.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>madera.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>granito.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Concrete.Cast-In-Place.Flat.Grey.1.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Masonry.Unit Masonry.Brick.Modular.Herringbone.2.bump.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Finishes.Tiling.Ceramic.Mosaic.Blue.Bump.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Finishes.Tiling.Ceramic.Mosaic.Blue.jpg</bitmap>
+		</m>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Brick_Weave_Running_Carib.jpg</bitmap>
+		</m>
+		<m name='01 - Default' type='Standardmaterial'>
+			<ambient>[150.0,150.0,150.0,255.0]</ambient>
+			<diffuse>[150.0,150.0,150.0,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>BGT1891.jpg</bitmap>
+		</m>
+		<m name='03 - Default' type='Standardmaterial'>
+			<ambient>[150.0,150.0,150.0,255.0]</ambient>
+			<diffuse>[150.0,150.0,150.0,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Simple_Metal_Mtl_Brush_pattern.jpg</bitmap>
+		</m>
+		<m name='07 - Default' type='Standardmaterial'>
+			<ambient>[150.0,150.0,150.0,255.0]</ambient>
+			<diffuse>[150.0,150.0,150.0,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>wood_texture25.jpg</bitmap>
+		</m>
+		<m name='Wood2' type='Standardmaterial'>
+			<ambient>[150.0,150.0,150.0,255.0]</ambient>
+			<diffuse>[150.0,150.0,150.0,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>Wood_texture_I_by_ResurgidaResources.jpg</bitmap>
+		</m>
+		<m name='Wood3' type='Standardmaterial'>
+			<ambient>[150.0,150.0,150.0,255.0]</ambient>
+			<diffuse>[150.0,150.0,150.0,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>seamless-wood-texture-ipad-wallpaper-backgrounds-basketball-baby-kwndiqxr.jpg</bitmap>
+		</m>
+	</materials>
+	<meshes count='83' >
+		<mesh name='Main-Roof-0' layer='Main' type='Original' matId='0' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,100,200]' max='[510,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 100.0 200.0 510.0 100.0 200.0 510.0 100.0 500.0 10.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.975689 0.0 0.21916 -0.975689 0.0 0.21916 -0.975689 0.0 0.21916 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.975689 0.0 0.0 0.975689 0.0 0.0 0.975689 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-Floor-0' layer='Main' type='Original' matId='1' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,200]' max='[510,0,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 200.0 510.0 0.0 200.0 510.0 0.0 500.0 10.0 0.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.975689 0.0 0.21916 -0.975689 0.0 0.21916 -0.975689 0.0 0.21916 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.975689 0.0 0.0 0.975689 0.0 0.0 0.975689 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-East-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,200]' max='[510,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 200.0 510.0 0.0 500.0 510.0 100.0 500.0 510.0 100.0 200.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.380954 -0.924594 0.0 0.380954 -0.924594 0.0 0.380954 -0.924594 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.924594 0.380954 0.0 0.924594 0.380954 0.0 0.924594 0.380954 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-West-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,200]' max='[10,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 200.0 10.0 0.0 500.0 10.0 100.0 500.0 10.0 100.0 200.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.380954 -0.924594 0.0 0.380954 -0.924594 0.0 0.380954 -0.924594 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.924594 0.380954 0.0 0.924594 0.380954 0.0 0.924594 0.380954 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-North-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,200]' max='[60,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 200.0 60.0 0.0 200.0 60.0 100.0 200.0 10.0 100.0 200.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Main-North-1' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[160,0,200]' max='[210,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>160.0 0.0 200.0 210.0 0.0 200.0 210.0 100.0 200.0 160.0 100.0 200.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Main-South-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,500]' max='[510,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 500.0 510.0 0.0 500.0 510.0 100.0 500.0 10.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.886813 0.462128 0.0 -0.886813 0.462128 0.0 -0.886813 0.462128 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.886813 0.0 0.0 0.886813 0.0 0.0 0.886813 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Roof-0' layer='Hallway' type='Original' matId='0' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[520,100,130]' max='[570,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>520.0 100.0 130.0 570.0 100.0 130.0 570.0 100.0 500.0 520.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.426644 0.0 -0.90442 -0.426644 0.0 -0.90442 -0.426644 0.0 -0.90442 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.426644 0.0 0.0 0.426644 0.0 0.0 0.426644 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Floor-0' layer='Hallway' type='Original' matId='3' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[520,0,130]' max='[570,0,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>520.0 0.0 130.0 570.0 0.0 130.0 570.0 0.0 500.0 520.0 0.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.426644 0.0 -0.90442 -0.426644 0.0 -0.90442 -0.426644 0.0 -0.90442 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.426644 0.0 0.0 0.426644 0.0 0.0 0.426644 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-East-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,130]' max='[570,100,260]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 130.0 570.0 0.0 260.0 570.0 100.0 260.0 570.0 100.0 130.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-East-1' layer='Lights' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,310]' max='[570,100,450]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 310.0 570.0 0.0 450.0 570.0 100.0 450.0 570.0 100.0 310.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.152862 -0.988247 0.0 0.152862 -0.988247 0.0 0.152862 -0.988247 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.988247 0.152862 0.0 0.988247 0.152862 0.0 0.988247 0.152862 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-West-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[520,0,180]' max='[520,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>520.0 0.0 180.0 520.0 0.0 500.0 520.0 100.0 500.0 520.0 100.0 180.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.393731 -0.919226 0.0 0.393731 -0.919226 0.0 0.393731 -0.919226 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.919226 0.393731 0.0 0.919226 0.393731 0.0 0.919226 0.393731 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-North-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[519.922,0,130]' max='[569.922,100,130]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>519.922 0.0 130.0 569.922 0.0 130.0 569.922 100.0 130.0 519.922 100.0 130.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-South-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[520,0,500]' max='[570,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>520.0 0.0 500.0 570.0 0.0 500.0 570.0 100.0 500.0 520.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-Roof-0' layer='MensBathroom' type='Original' matId='4' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,100,130]' max='[760,100,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 100.0 130.0 760.0 100.0 130.0 760.0 100.0 310.0 580.0 100.0 310.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-Floor-0' layer='MensBathroom' type='Original' matId='5' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,130]' max='[760,0,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 130.0 760.0 0.0 130.0 760.0 0.0 310.0 580.0 0.0 310.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-East-0' layer='MensBathroom' type='Original' matId='6' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[760,0,130]' max='[760,100,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>760.0 0.0 130.0 760.0 0.0 310.0 760.0 100.0 310.0 760.0 100.0 130.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.245587 -0.969375 0.0 0.245587 -0.969375 0.0 0.245587 -0.969375 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.969375 0.245587 0.0 0.969375 0.245587 0.0 0.969375 0.245587 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-West-0' layer='MensBathroom' type='Original' matId='6' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,130]' max='[580,100,260]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 130.0 580.0 0.0 260.0 580.0 100.0 260.0 580.0 100.0 130.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-North-0' layer='MensBathroom' type='Original' matId='6' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,130]' max='[760,100,130]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 130.0 760.0 0.0 130.0 760.0 100.0 130.0 580.0 100.0 130.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='MenBathroom-South-0' layer='MensBathroom' type='Original' matId='6' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,310]' max='[760,100,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 310.0 760.0 0.0 310.0 760.0 100.0 310.0 580.0 100.0 310.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-Roof-0' layer='WomenBathroom' type='Original' matId='4' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,100,320]' max='[760,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 100.0 320.0 760.0 100.0 320.0 760.0 100.0 500.0 580.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-Floor-0' layer='WomenBathroom' type='Original' matId='5' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,320]' max='[760,0,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 320.0 760.0 0.0 320.0 760.0 0.0 500.0 580.0 0.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-East-0' layer='WomenBathroom' type='Original' matId='7' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[760,0,320]' max='[760,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>760.0 0.0 320.0 760.0 0.0 500.0 760.0 100.0 500.0 760.0 100.0 320.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.245587 -0.969375 0.0 0.245587 -0.969375 0.0 0.245587 -0.969375 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.969375 0.245587 0.0 0.969375 0.245587 0.0 0.969375 0.245587 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-West-0' layer='WomenBathroom' type='Original' matId='7' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,320]' max='[580,100,450]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 320.0 580.0 0.0 450.0 580.0 100.0 450.0 580.0 100.0 320.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-North-0' layer='WomenBathroom' type='Original' matId='7' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,320]' max='[760,100,320]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 320.0 760.0 0.0 320.0 760.0 100.0 320.0 580.0 100.0 320.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='WomenBathroom-South-0' layer='WomenBathroom' type='Original' matId='7' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[580,0,500]' max='[760,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>580.0 0.0 500.0 760.0 0.0 500.0 760.0 100.0 500.0 580.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -0.969375 0.245587 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 0.969375 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Main-Hallway-Roof-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,100,130]' max='[520,100,180]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 100.0 130.0 520.0 100.0 130.0 520.0 100.0 180.0 510.0 100.0 180.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582762 0.0 -0.812643 -0.582762 0.0 -0.812643 -0.582762 0.0 -0.812643 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582762 0.0 0.0 0.582762 0.0 0.0 0.582762 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-Hallway-Floor-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,130]' max='[520,0,180]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 130.0 520.0 0.0 130.0 520.0 0.0 180.0 510.0 0.0 180.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582762 0.0 -0.812643 -0.582762 0.0 -0.812643 -0.582762 0.0 -0.812643 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582762 0.0 0.0 0.582762 0.0 0.0 0.582762 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main-Hallway-North-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,130]' max='[520,100,130]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 130.0 520.0 0.0 130.0 520.0 100.0 130.0 510.0 100.0 130.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326625 -0.945154 0.0 -0.326625 -0.945154 0.0 -0.326625 -0.945154 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326625 0.0 0.0 0.326625 0.0 0.0 0.326625 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Main-Hallway-South-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,180]' max='[520,100,180]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 180.0 520.0 0.0 180.0 520.0 100.0 180.0 510.0 100.0 180.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326625 -0.945154 0.0 -0.326625 -0.945154 0.0 -0.326625 -0.945154 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326625 0.0 0.0 0.326625 0.0 0.0 0.326625 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Men-Roof-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,100,260]' max='[580,100,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 100.0 260.0 580.0 100.0 260.0 580.0 100.0 310.0 570.0 100.0 310.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Men-Floor-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,260]' max='[580,0,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 260.0 580.0 0.0 260.0 580.0 0.0 310.0 570.0 0.0 310.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Men-North-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,260]' max='[580,100,260]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 260.0 580.0 0.0 260.0 580.0 100.0 260.0 570.0 100.0 260.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Men-South-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,310]' max='[580,100,310]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 310.0 580.0 0.0 310.0 580.0 100.0 310.0 570.0 100.0 310.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Women-Roof-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,100,450]' max='[580,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 100.0 450.0 580.0 100.0 450.0 580.0 100.0 500.0 570.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Women-Floor-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,450]' max='[580,0,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 450.0 580.0 0.0 450.0 580.0 0.0 500.0 570.0 0.0 500.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 0.582767 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Women-North-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,450]' max='[580,100,450]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 450.0 580.0 0.0 450.0 580.0 100.0 450.0 570.0 100.0 450.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Hallway-Women-South-0' layer='Hallway' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[570,0,500]' max='[580,100,500]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>570.0 0.0 500.0 580.0 0.0 500.0 580.0 100.0 500.0 570.0 100.0 500.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-Roof-0' layer='DanceFloor' type='Original' matId='0' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,100,0.18782]' max='[200,100,190.188]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 100.0 0.18782 200.0 100.0 0.18782 200.0 100.0 190.188 10.0 100.0 190.188 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-Floor-0' layer='DanceFloor' type='Original' matId='8' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,0]' max='[200,0,190]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 0.0 200.0 0.0 0.0 200.0 0.0 190.0 10.0 0.0 190.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-East-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,0,0]' max='[200,100,50]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 0.0 0.0 200.0 0.0 50.0 200.0 100.0 50.0 200.0 100.0 0.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-East-1' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,0,150]' max='[200,100,190]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 0.0 150.0 200.0 0.0 190.0 200.0 100.0 190.0 200.0 100.0 150.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.512003 -0.858984 0.0 -0.512003 -0.858984 0.0 -0.512003 -0.858984 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.858984 -0.512003 0.0 0.858984 -0.512003 0.0 0.858984 -0.512003 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-West-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,0]' max='[10,100,190]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 0.0 10.0 0.0 190.0 10.0 100.0 190.0 10.0 100.0 0.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.263137 -0.964759 0.0 0.263137 -0.964759 0.0 0.263137 -0.964759 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.964759 0.263137 0.0 0.964759 0.263137 0.0 0.964759 0.263137 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-North-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,0]' max='[200,100,0]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 0.0 200.0 0.0 0.0 200.0 100.0 0.0 10.0 100.0 0.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.964759 0.263137 0.0 -0.964759 0.263137 0.0 -0.964759 0.263137 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.964759 0.0 0.0 0.964759 0.0 0.0 0.964759 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-South-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[10,0,190]' max='[60,100,190]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>10.0 0.0 190.0 60.0 0.0 190.0 60.0 100.0 190.0 10.0 100.0 190.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -0.922357 -0.386339 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 0.922357 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceFloor-South-1' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[160,0,190]' max='[200,100,190]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>160.0 0.0 190.0 200.0 0.0 190.0 200.0 100.0 190.0 160.0 100.0 190.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.858984 -0.512003 0.0 -0.858984 -0.512003 0.0 -0.858984 -0.512003 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.858984 0.0 0.0 0.858984 0.0 0.0 0.858984 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='Main2-Roof-0' layer='Main' type='Original' matId='0' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[210,100,0]' max='[510,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>210.0 100.0 0.0 510.0 100.0 0.0 510.0 100.0 200.0 210.0 100.0 200.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.983635 0.0 0.180172 -0.983635 0.0 0.180172 -0.983635 0.0 0.180172 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.983635 0.0 0.0 0.983635 0.0 0.0 0.983635 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-Floor-0' layer='Main' type='Original' matId='1' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[210,0,0]' max='[510,0,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>210.0 0.0 0.0 510.0 0.0 0.0 510.0 0.0 200.0 210.0 0.0 200.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.983635 0.0 0.180172 -0.983635 0.0 0.180172 -0.983635 0.0 0.180172 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.983635 0.0 0.0 0.983635 0.0 0.0 0.983635 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-East-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,0]' max='[510,100,130]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 0.0 510.0 0.0 130.0 510.0 100.0 130.0 510.0 100.0 0.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.121961 -0.992535 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 0.992535 0.121961 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-East-1' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[510,0,180]' max='[510,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>510.0 0.0 180.0 510.0 0.0 200.0 510.0 100.0 200.0 510.0 100.0 180.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 -0.812639 -0.582767 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.582767 -0.812639 0.0 0.582767 -0.812639 0.0 0.582767 -0.812639 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-West-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[210,0,0]' max='[210,100,50]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>210.0 0.0 0.0 210.0 0.0 50.0 210.0 100.0 50.0 210.0 100.0 0.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-West-1' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[210,0,150]' max='[210,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>210.0 0.0 150.0 210.0 0.0 200.0 210.0 100.0 200.0 210.0 100.0 150.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 -0.386339 -0.922357 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 0.922357 -0.386339 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Main2-North-0' layer='Main' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[210,0,0]' max='[510,100,0]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>210.0 0.0 0.0 510.0 0.0 0.0 510.0 100.0 0.0 210.0 100.0 0.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.924594 0.380954 0.0 -0.924594 0.380954 0.0 -0.924594 0.380954 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.924594 0.0 0.0 0.924594 0.0 0.0 0.924594 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain2-Roof-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,100,50]' max='[210,100,150]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 100.0 50.0 210.0 100.0 50.0 210.0 100.0 150.0 200.0 100.0 150.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain2-Floor-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,0,50]' max='[210,0,150]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 0.0 50.0 210.0 0.0 50.0 210.0 0.0 150.0 200.0 0.0 150.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain2-North-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,0,50]' max='[210,100,50]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 0.0 50.0 210.0 0.0 50.0 210.0 100.0 50.0 200.0 100.0 50.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain2-South-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[200,0,150]' max='[210,100,150]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>200.0 0.0 150.0 210.0 0.0 150.0 210.0 100.0 150.0 200.0 100.0 150.0 </vertices>
+			<normals count='18'>0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -0.326628 -0.945153 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 0.326628 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain-Roof-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[60,100,190]' max='[160,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>60.0 100.0 190.0 160.0 100.0 190.0 160.0 100.0 200.0 60.0 100.0 200.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.853463 0.0 0.521153 -0.853463 0.0 0.521153 -0.853463 0.0 0.521153 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.853463 0.0 0.0 0.853463 0.0 0.0 0.853463 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain-Floor-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[60,0,190]' max='[160,0,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>60.0 0.0 190.0 160.0 0.0 190.0 160.0 0.0 200.0 60.0 0.0 200.0 </vertices>
+			<normals count='18'>0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>-0.853463 0.0 0.521153 -0.853463 0.0 0.521153 -0.853463 0.0 0.521153 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </tangents>
+			<binormals count='18'>0.0 0.853463 0.0 0.0 0.853463 0.0 0.0 0.853463 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain-East-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[160,0,190]' max='[160,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>160.0 0.0 190.0 160.0 0.0 200.0 160.0 100.0 200.0 160.0 100.0 190.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.326628 -0.945153 0.0 0.326628 -0.945153 0.0 0.326628 -0.945153 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='DanceMain-West-0' layer='DanceFloor' type='Original' matId='2' color='[1.0,1.0,1.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[60,0,190]' max='[60,100,200]'/>
+			<coordinatesIdx count='6'>0 2 3 0 1 2 </coordinatesIdx>
+			<textCoordsIdx count='6'>0 2 3 0 1 2 </textCoordsIdx>
+			<colorsIdx count='6'>0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='12'>60.0 0.0 190.0 60.0 0.0 200.0 60.0 100.0 200.0 60.0 100.0 190.0 </vertices>
+			<normals count='18'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 </normals>
+			<texCoords count='8'>1.0 1.0 0.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='18'>0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 -0.945153 -0.326628 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 </tangents>
+			<binormals count='18'>0.0 0.326628 -0.945153 0.0 0.326628 -0.945153 0.0 0.326628 -0.945153 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 </binormals>
+		</mesh>
+		<mesh name='MirrorBall' layer='MirrorBall' type='Original' matId='9' color='[6.0,135.0,6.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[95,68.2857,85]' max='[115,88.2857,105]'/>
+			<coordinatesIdx count='144'>0 1 2 0 2 3 0 3 4 0 4 5 0 5 6 0 6 7 0 7 8 0 8 1 1 9 10 1 10 2 2 10 11 2 11 3 3 11 12 3 12 4 4 12 13 4 13 5 5 13 14 5 14 6 6 14 15 6 15 7 7 15 16 7 16 8 8 16 9 8 9 1 9 17 18 9 18 10 10 18 19 10 19 11 11 19 20 11 20 12 12 20 21 12 21 13 13 21 22 13 22 14 14 22 23 14 23 15 15 23 24 15 24 16 16 24 17 16 17 9 25 18 17 25 19 18 25 20 19 25 21 20 25 22 21 25 23 22 25 24 23 25 17 24 </coordinatesIdx>
+			<textCoordsIdx count='144'>0 9 10 1 10 11 2 11 12 3 12 13 4 13 14 5 14 15 6 15 16 7 16 17 9 18 19 9 19 10 10 19 20 10 20 11 11 20 21 11 21 12 12 21 22 12 22 13 13 22 23 13 23 14 14 23 24 14 24 15 15 24 25 15 25 16 16 25 26 16 26 17 18 27 28 18 28 19 19 28 29 19 29 20 20 29 30 20 30 21 21 30 31 21 31 22 22 31 32 22 32 23 23 32 33 23 33 24 24 33 34 24 34 25 25 34 35 25 35 26 36 28 27 37 29 28 38 30 29 39 31 30 40 32 31 41 33 32 42 34 33 43 35 34 </textCoordsIdx>
+			<colorsIdx count='144'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='78'>105.0 88.2857 95.0 105.0 85.3567 102.071 100.0 85.3567 100.0 97.9289 85.3567 95.0 100.0 85.3567 90.0 105.0 85.3567 87.9289 110.0 85.3567 90.0 112.071 85.3567 95.0 110.0 85.3567 100.0 105.0 78.2857 105.0 97.9289 78.2857 102.071 95.0 78.2857 95.0 97.9289 78.2857 87.9289 105.0 78.2857 85.0 112.071 78.2857 87.9289 115.0 78.2857 95.0 112.071 78.2857 102.071 105.0 71.2146 102.071 100.0 71.2146 100.0 97.9289 71.2146 95.0 100.0 71.2146 90.0 105.0 71.2146 87.9289 110.0 71.2146 90.0 112.071 71.2146 95.0 110.0 71.2146 100.0 105.0 68.2857 95.0 </vertices>
+			<normals count='432'>0.0 1.0 0.0 0.0 0.663004 0.748616 -0.529351 0.663004 0.529351 0.0 1.0 0.0 -0.529351 0.663004 0.529351 -0.748616 0.663004 0.0 0.0 1.0 0.0 -0.748616 0.663004 0.0 -0.529351 0.663004 -0.529351 0.0 1.0 0.0 -0.529351 0.663004 -0.529351 0.0 0.663004 -0.748616 0.0 1.0 0.0 0.0 0.663004 -0.748616 0.529351 0.663004 -0.529351 0.0 1.0 0.0 0.529351 0.663004 -0.529351 0.748616 0.663004 0.0 0.0 1.0 0.0 0.748616 0.663004 0.0 0.529351 0.663004 0.529351 0.0 1.0 0.0 0.529351 0.663004 0.529351 0.0 0.663004 0.748616 0.0 0.663004 0.748616 0.0 0.0 1.0 -0.707107 0.0 0.707107 0.0 0.663004 0.748616 -0.707107 0.0 0.707107 -0.529351 0.663004 0.529351 -0.529351 0.663004 0.529351 -0.707107 0.0 0.707107 -1.0 0.0 0.0 -0.529351 0.663004 0.529351 -1.0 0.0 0.0 -0.748616 0.663004 0.0 -0.748616 0.663004 0.0 -1.0 0.0 0.0 -0.707107 0.0 -0.707107 -0.748616 0.663004 0.0 -0.707107 0.0 -0.707107 -0.529351 0.663004 -0.529351 -0.529351 0.663004 -0.529351 -0.707107 0.0 -0.707107 0.0 0.0 -1.0 -0.529351 0.663004 -0.529351 0.0 0.0 -1.0 0.0 0.663004 -0.748616 0.0 0.663004 -0.748616 0.0 0.0 -1.0 0.707107 0.0 -0.707107 0.0 0.663004 -0.748616 0.707107 0.0 -0.707107 0.529351 0.663004 -0.529351 0.529351 0.663004 -0.529351 0.707107 0.0 -0.707107 1.0 0.0 0.0 0.529351 0.663004 -0.529351 1.0 0.0 0.0 0.748616 0.663004 0.0 0.748616 0.663004 0.0 1.0 0.0 0.0 0.707107 0.0 0.707107 0.748616 0.663004 0.0 0.707107 0.0 0.707107 0.529351 0.663004 0.529351 0.529351 0.663004 0.529351 0.707107 0.0 0.707107 0.0 0.0 1.0 0.529351 0.663004 0.529351 0.0 0.0 1.0 0.0 0.663004 0.748616 0.0 0.0 1.0 0.0 -0.663004 0.748616 -0.529351 -0.663004 0.529351 0.0 0.0 1.0 -0.529351 -0.663004 0.529351 -0.707107 0.0 0.707107 -0.707107 0.0 0.707107 -0.529351 -0.663004 0.529351 -0.748616 -0.663004 0.0 -0.707107 0.0 0.707107 -0.748616 -0.663004 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -0.748616 -0.663004 0.0 -0.529351 -0.663004 -0.529351 -1.0 0.0 0.0 -0.529351 -0.663004 -0.529351 -0.707107 0.0 -0.707107 -0.707107 0.0 -0.707107 -0.529351 -0.663004 -0.529351 0.0 -0.663004 -0.748616 -0.707107 0.0 -0.707107 0.0 -0.663004 -0.748616 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 -0.663004 -0.748616 0.529351 -0.663004 -0.529351 0.0 0.0 -1.0 0.529351 -0.663004 -0.529351 0.707107 0.0 -0.707107 0.707107 0.0 -0.707107 0.529351 -0.663004 -0.529351 0.748616 -0.663004 0.0 0.707107 0.0 -0.707107 0.748616 -0.663004 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.748616 -0.663004 0.0 0.529351 -0.663004 0.529351 1.0 0.0 0.0 0.529351 -0.663004 0.529351 0.707107 0.0 0.707107 0.707107 0.0 0.707107 0.529351 -0.663004 0.529351 0.0 -0.663004 0.748616 0.707107 0.0 0.707107 0.0 -0.663004 0.748616 0.0 0.0 1.0 0.0 -1.0 0.0 -0.529351 -0.663004 0.529351 0.0 -0.663004 0.748616 0.0 -1.0 0.0 -0.748616 -0.663004 0.0 -0.529351 -0.663004 0.529351 0.0 -1.0 0.0 -0.529351 -0.663004 -0.529351 -0.748616 -0.663004 0.0 0.0 -1.0 0.0 0.0 -0.663004 -0.748616 -0.529351 -0.663004 -0.529351 0.0 -1.0 0.0 0.529351 -0.663004 -0.529351 0.0 -0.663004 -0.748616 0.0 -1.0 0.0 0.748616 -0.663004 0.0 0.529351 -0.663004 -0.529351 0.0 -1.0 0.0 0.529351 -0.663004 0.529351 0.748616 -0.663004 0.0 0.0 -1.0 0.0 0.0 -0.663004 0.748616 0.529351 -0.663004 0.529351 </normals>
+			<texCoords count='90'>0.0 0.0 0.125 0.0 0.25 0.0 0.375 0.0 0.5 0.0 0.625 0.0 0.75 0.0 0.875 0.0 1.0 0.0 0.0 0.25 0.125 0.25 0.25 0.25 0.375 0.25 0.5 0.25 0.625 0.25 0.75 0.25 0.875 0.25 1.0 0.25 0.0 0.5 0.125 0.5 0.25 0.5 0.375 0.5 0.5 0.5 0.625 0.5 0.75 0.5 0.875 0.5 1.0 0.5 0.0 0.75 0.125 0.75 0.25 0.75 0.375 0.75 0.5 0.75 0.625 0.75 0.75 0.75 0.875 0.75 1.0 0.75 0.0 1.0 0.125 1.0 0.25 1.0 0.375 1.0 0.5 1.0 0.625 1.0 0.75 1.0 0.875 1.0 1.0 1.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='432'>-0.964933 -0.0596745 -0.255621 -0.964933 -0.0596745 -0.255621 -0.964933 -0.0596745 -0.255621 -0.501559 -0.0596745 -0.863063 -0.501559 -0.0596745 -0.863063 -0.501559 -0.0596745 -0.863063 0.255621 -0.0596745 -0.964933 0.255621 -0.0596745 -0.964933 0.255621 -0.0596745 -0.964933 0.863063 -0.0596745 -0.501559 0.863063 -0.0596745 -0.501559 0.863063 -0.0596745 -0.501559 0.964933 -0.0596745 0.255621 0.964933 -0.0596745 0.255621 0.964933 -0.0596745 0.255621 0.501559 -0.0596745 0.863063 0.501559 -0.0596745 0.863063 0.501559 -0.0596745 0.863063 -0.255622 -0.0596744 0.964933 -0.255622 -0.0596744 0.964933 -0.255622 -0.0596744 0.964933 -0.863063 -0.0596745 0.501559 -0.863063 -0.0596745 0.501559 -0.863063 -0.0596745 0.501559 -0.889901 0.15006 -0.430766 -0.889901 0.15006 -0.430766 -0.889901 0.15006 -0.430766 -0.92388 0.0 -0.382683 -0.92388 0.0 -0.382683 -0.92388 0.0 -0.382683 -0.324657 0.15006 -0.933852 -0.324657 0.15006 -0.933852 -0.324657 0.15006 -0.933852 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 0.430766 0.15006 -0.889901 0.430766 0.15006 -0.889901 0.430766 0.15006 -0.889901 0.382683 0.0 -0.92388 0.382683 0.0 -0.92388 0.382683 0.0 -0.92388 0.933852 0.15006 -0.324657 0.933852 0.15006 -0.324657 0.933852 0.15006 -0.324657 0.92388 0.0 -0.382683 0.92388 0.0 -0.382683 0.92388 0.0 -0.382683 0.889901 0.15006 0.430766 0.889901 0.15006 0.430766 0.889901 0.15006 0.430766 0.92388 0.0 0.382683 0.92388 0.0 0.382683 0.92388 0.0 0.382683 0.324657 0.15006 0.933852 0.324657 0.15006 0.933852 0.324657 0.15006 0.933852 0.382683 0.0 0.92388 0.382683 0.0 0.92388 0.382683 0.0 0.92388 -0.430766 0.15006 0.889901 -0.430766 0.15006 0.889901 -0.430766 0.15006 0.889901 -0.382683 0.0 0.92388 -0.382683 0.0 0.92388 -0.382683 0.0 0.92388 -0.933852 0.15006 0.324657 -0.933852 0.15006 0.324657 -0.933852 0.15006 0.324657 -0.92388 0.0 0.382683 -0.92388 0.0 0.382683 -0.92388 0.0 0.382683 -0.929933 0.221763 -0.293334 -0.929933 0.221763 -0.293334 -0.929933 0.221763 -0.293334 -0.92388 0.0 -0.382683 -0.92388 0.0 -0.382683 -0.92388 0.0 -0.382683 -0.450144 0.221763 -0.864981 -0.450144 0.221763 -0.864981 -0.450144 0.221763 -0.864981 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 0.293334 0.221763 -0.929933 0.293334 0.221763 -0.929933 0.293334 0.221763 -0.929933 0.382683 0.0 -0.92388 0.382683 0.0 -0.92388 0.382683 0.0 -0.92388 0.864981 0.221763 -0.450144 0.864981 0.221763 -0.450144 0.864981 0.221763 -0.450144 0.92388 0.0 -0.382683 0.92388 0.0 -0.382683 0.92388 0.0 -0.382683 0.929933 0.221763 0.293334 0.929933 0.221763 0.293334 0.929933 0.221763 0.293334 0.92388 0.0 0.382683 0.92388 0.0 0.382683 0.92388 0.0 0.382683 0.450144 0.221763 0.864981 0.450144 0.221763 0.864981 0.450144 0.221763 0.864981 0.382683 0.0 0.92388 0.382683 0.0 0.92388 0.382683 0.0 0.92388 -0.293334 0.221764 0.929933 -0.293334 0.221764 0.929933 -0.293334 0.221764 0.929933 -0.382683 0.0 0.92388 -0.382683 0.0 0.92388 -0.382683 0.0 0.92388 -0.864981 0.221763 0.450144 -0.864981 0.221763 0.450144 -0.864981 0.221763 0.450144 -0.92388 0.0 0.382683 -0.92388 0.0 0.382683 -0.92388 0.0 0.382683 -0.964933 0.0596745 -0.255621 -0.964933 0.0596745 -0.255621 -0.964933 0.0596745 -0.255621 -0.501559 0.0596745 -0.863063 -0.501559 0.0596745 -0.863063 -0.501559 0.0596745 -0.863063 0.255621 0.0596745 -0.964933 0.255621 0.0596745 -0.964933 0.255621 0.0596745 -0.964933 0.863063 0.0596745 -0.501559 0.863063 0.0596745 -0.501559 0.863063 0.0596745 -0.501559 0.964933 0.0596745 0.255621 0.964933 0.0596745 0.255621 0.964933 0.0596745 0.255621 0.501559 0.0596745 0.863063 0.501559 0.0596745 0.863063 0.501559 0.0596745 0.863063 -0.255622 0.0596744 0.964933 -0.255622 0.0596744 0.964933 -0.255622 0.0596744 0.964933 -0.863063 0.0596745 0.501559 -0.863063 0.0596745 0.501559 -0.863063 0.0596745 0.501559 </tangents>
+			<binormals count='432'>0.0957491 0.775068 -0.542378 0.0957491 0.775068 -0.542378 0.0957491 0.775068 -0.542378 -0.0395645 0.978638 -0.0446733 -0.0395645 0.978638 -0.0446733 -0.0395645 0.978638 -0.0446733 0.550353 -0.341311 0.166902 0.550353 -0.341311 0.166902 0.550353 -0.341311 0.166902 0.41504 0.572214 0.646102 0.41504 0.572214 0.646102 0.41504 0.572214 0.646102 -0.0957491 0.504441 0.4792 -0.0957491 0.504441 0.4792 -0.0957491 0.504441 0.4792 -0.0395644 0.313567 0.0446733 -0.0395644 0.313567 0.0446733 -0.0395644 0.313567 0.0446733 -0.550353 0.680267 -0.103725 -0.550353 0.680267 -0.103725 -0.550353 0.680267 -0.103725 -0.41504 0.572214 -0.646102 -0.41504 0.572214 -0.646102 -0.41504 0.572214 -0.646102 0.304597 0.304597 -0.523146 0.304597 0.304597 -0.523146 0.304597 0.304597 -0.523146 0.202574 0.81511 -0.489057 0.202574 0.81511 -0.489057 0.202574 0.81511 -0.489057 0.0 0.933852 0.15006 0.0 0.933852 0.15006 0.0 0.933852 0.15006 0.0 0.945351 0.0 0.0 0.945351 0.0 0.0 0.945351 0.0 -0.629255 0.629255 -0.198489 -0.629255 0.629255 -0.198489 -0.629255 0.629255 -0.198489 -0.489057 0.235336 -0.202574 -0.489057 0.235336 -0.202574 -0.489057 0.235336 -0.202574 0.324657 0.0 0.933852 0.324657 0.0 0.933852 0.324657 0.0 0.933852 0.286483 0.612536 0.691631 0.286483 0.612536 0.691631 0.286483 0.612536 0.691631 -0.304597 -0.304597 0.735363 -0.304597 -0.304597 0.735363 -0.304597 -0.304597 0.735363 -0.202574 0.409962 0.489057 -0.202574 0.409962 0.489057 -0.202574 0.409962 0.489057 0.0 0.933852 -0.15006 0.0 0.933852 -0.15006 0.0 0.933852 -0.15006 0.0 0.43791 0.0 0.0 0.43791 0.0 0.0 0.43791 0.0 -0.629255 0.629255 -0.410706 -0.629255 0.629255 -0.410706 -0.629255 0.629255 -0.410706 -0.489057 0.742778 -0.202574 -0.489057 0.742778 -0.202574 -0.489057 0.742778 -0.202574 -0.324657 0.0 -0.933852 -0.324657 0.0 -0.933852 -0.324657 0.0 -0.933852 -0.286483 0.612536 -0.691631 -0.286483 0.612536 -0.691631 -0.286483 0.612536 -0.691631 -0.00824651 0.461273 0.374871 -0.00824651 0.461273 0.374871 -0.00824651 0.461273 0.374871 -0.270598 -0.270598 0.653282 -0.270598 -0.270598 0.653282 -0.270598 -0.270598 0.653282 -0.14703 0.349091 0.166016 -0.14703 0.349091 0.166016 -0.14703 0.349091 0.166016 0.0 0.92388 0.0 0.0 0.92388 0.0 0.0 0.92388 0.0 -0.639292 0.686743 -0.0378858 -0.639292 0.686743 -0.0378858 -0.639292 0.686743 -0.0378858 -0.653282 0.653281 -0.270598 -0.653282 0.653281 -0.270598 -0.653282 0.653281 -0.270598 -0.484015 0.573486 -0.647538 -0.484015 0.573486 -0.647538 -0.484015 0.573486 -0.647538 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 -0.382683 0.0 -0.92388 0.00824654 0.771826 -0.609652 0.00824654 0.771826 -0.609652 0.00824654 0.771826 -0.609652 0.270598 0.270598 -0.653282 0.270598 0.270598 -0.653282 0.270598 0.270598 -0.653282 -0.14703 0.945985 -0.166016 -0.14703 0.945985 -0.166016 -0.14703 0.945985 -0.166016 0.0 0.92388 0.0 0.0 0.92388 0.0 0.0 0.92388 0.0 -0.639292 0.29778 -0.272667 -0.639292 0.29778 -0.272667 -0.639292 0.29778 -0.272667 -0.653281 0.653282 -0.270598 -0.653281 0.653282 -0.270598 -0.653281 0.653282 -0.270598 0.484015 0.573486 0.647538 0.484015 0.573486 0.647538 0.484015 0.573486 0.647538 0.382683 0.0 0.92388 0.382683 0.0 0.92388 0.382683 0.0 0.92388 -0.151798 0.639755 0.722364 -0.151798 0.639755 0.722364 -0.151798 0.639755 0.722364 -0.417299 -0.124328 0.233912 -0.417299 -0.124328 0.233912 -0.417299 -0.124328 0.233912 -0.0395644 0.891842 0.0446733 -0.0395644 0.891842 0.0446733 -0.0395644 0.891842 0.0446733 -0.305066 0.837715 -0.425275 -0.305066 0.837715 -0.425275 -0.305066 0.837715 -0.425275 0.151798 0.639755 -0.722364 0.151798 0.639755 -0.722364 0.151798 0.639755 -0.722364 0.417299 0.789399 -0.29709 0.417299 0.789399 -0.29709 0.417299 0.789399 -0.29709 -0.0395644 0.552886 -0.0446732 -0.0395644 0.552886 -0.0446732 -0.0395644 0.552886 -0.0446732 0.305065 0.306713 0.488452 0.305065 0.306713 0.488452 0.305065 0.306713 0.488452 </binormals>
+		</mesh>
+		<mesh name='MirrorBallHanger' layer='DanceFloor' type='Original' matId='10' color='[28.0,149.0,177.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[104.979,87.987,94.8164]' max='[105.479,99.9661,95.3164]'/>
+			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
+			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
+			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
+			<matIds count='1'>0</matIds>
+			<vertices count='24'>105.479 87.987 95.3164 105.479 87.987 94.8164 105.479 99.9661 95.3164 105.479 99.9661 94.8164 104.979 87.987 95.3164 104.979 87.987 94.8164 104.979 99.9661 95.3164 104.979 99.9661 94.8164 </vertices>
+			<normals count='108'>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 </normals>
+			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+			<colors count='3'>255 255 255 </colors>
+			<tangents count='108'>0.0 -0.989956 0.141373 0.0 -0.989956 0.141373 0.0 -0.989956 0.141373 0.0 -0.989956 0.141373 0.0 -0.989956 0.141373 0.0 -0.989956 0.141373 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 </tangents>
+			<binormals count='108'>0.0 0.141373 0.989956 0.0 0.141373 0.989956 0.0 0.141373 0.989956 0.0 0.141373 0.989956 0.0 0.141373 0.989956 0.0 0.141373 0.989956 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </binormals>
+		</mesh>
+		<mesh name='Table001' layer='MainForniture' type='Original' matId='11' color='[214.0,228.0,153.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[67.2658,-0.0492125,397.689]' max='[131.076,31.8698,461.498]'/>

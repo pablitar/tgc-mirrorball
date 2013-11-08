@@ -1,0 +1,18 @@
+<tgcScene>
+	<name>Scene01</name>
+	<texturesExport enabled='true' dir='Textures'/>
+	<lightmapExport enabled='false' dir='LightMaps'/>
+	<sceneBoundingBox min='[382.423,-0.0492125,39.2119]' max='[446.233,31.8698,103.022]'/>
+	<materials count='1'>
+		<m name='Standardmaterial' type='Standardmaterial'>
+			<ambient>[149.94,149.94,149.94,255.0]</ambient>
+			<diffuse>[149.94,149.94,149.94,255.0]</diffuse>
+			<specular>[229.5,229.5,229.5,255.0]</specular>
+			<opacity>100.0</opacity>
+			<alphaBlendEnable>false</alphaBlendEnable>
+			<bitmap uvTiling='[1.0,1.0]' uvOffset='[0.0,0.0]'>madera.jpg</bitmap>
+		</m>
+	</materials>
+	<meshes count='1' >
+		<mesh name='Table003' layer='MainForniture' type='Original' matId='0' color='[214.0,228.0,153.0]' visibility='1.0' lightmap=''>
+			<boundingBox min='[382.423,-0.0492125,39.2119]' max='[446.233,31.8698,103.022]'/>

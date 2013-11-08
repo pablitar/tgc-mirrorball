@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -88,11 +89,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MiGrupo\EjemploAlumno.cs" />
+    <Compile Include="MiGrupo\LightData.cs" />
+    <Compile Include="MiGrupo\MeshLightData.cs" />
+    <Compile Include="MiGrupo\MirrorBall3Spot.cs" />
+    <Compile Include="MiGrupo\ParseadorDeEscena.cs" />
+    <Compile Include="MirrorBallPrototype\EjemploEscenaNueva.cs" />
     <Compile Include="MirrorBallPrototype\EjemploMirrorBall.cs" />
     <Compile Include="MultipassPrototype\Lights.cs" />
     <Compile Include="MultipassPrototype\MultipassAndMirrorball.cs" />
     <Compile Include="MultipassPrototype\TgcRTLMesh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RideTheLightning\LightLoader.cs" />
+    <Compile Include="RideTheLightning\ManyLightsExample.cs" />
+    <Compile Include="RideTheLightning\RTLLight.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TgcViewer\TgcViewer.csproj">
@@ -118,8 +127,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnoMedia\RideTheLightning\Shaders\shaderFinal.fx" />
     <Content Include="AlumnoMedia\Shaders\MirrorBallEffectShader.fx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

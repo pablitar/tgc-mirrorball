@@ -20,7 +20,7 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
     {
         ParseadorDeEscena parseador;
         float mirrorBallRowCount;
-        int numberOfProjections = 25;
+        int numberOfProjections = 9;
         float mirrorBallFov;
         Matrix mirrorBallProjection;
         Vector3 mirrorBallDirectionVector = new Vector3(1, 0, 0);
@@ -76,7 +76,7 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             //Bola de espejos
             GuiController.Instance.Modifiers.addFloat("mirrorBallIntensity", 0f, 10f, 5f);
             GuiController.Instance.Modifiers.addFloat("mirrorBallAttenuation", 0f, 10f, 0.2f);
-            GuiController.Instance.Modifiers.addVertex3f("mirrorBallPosition", new Vector3(-1000, -1000, -1000), new Vector3(1000, 1000, 1000), new Vector3(0, 100, 0));
+            GuiController.Instance.Modifiers.addVertex3f("mirrorBallPosition", new Vector3(-1000, -1000, -1000), new Vector3(1000, 1000, 1000), new Vector3(100, 100, 100));
             mirrorBallRowCount = FastMath.Sqrt(numberOfProjections);
 
             mirrorBallFov = FastMath.PI / mirrorBallRowCount;
@@ -147,13 +147,14 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
 
             int currentIndex = 0;
 
+            Vector3 mirrorBallPosition = (Vector3)GuiController.Instance.Modifiers["mirrorBallPosition"];
+
             for (int i = 0; i < mirrorBallRowCount; i++)
             {
                 for (int u = 0; u < mirrorBallRowCount; u++)
                 {
                     result[currentIndex] =
-                        Matrix.LookAtLH((Vector3)GuiController.Instance.Modifiers["mirrorBallPosition"],
-                        (Vector3)GuiController.Instance.Modifiers["mirrorBallPosition"] + getDirectionVector(i, u), new Vector3(0, 1, 0)) * mirrorBallProjection;
+                        Matrix.LookAtLH(mirrorBallPosition, mirrorBallPosition + getDirectionVector(i, u), new Vector3(0, 1, 0)) * mirrorBallProjection;
                     currentIndex++;
                 }
             }
@@ -191,7 +192,7 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             Matrix[] viewProjMatrix = getMirrorBallViewProjMatrix();
             configurarBola(parseador.shader, viewProjMatrix);
             configurarLinterna(parseador.shader);
-
+            
             //Renderizar meshes
             foreach (MeshLightData mld in parseador.meshesZona1)
             {

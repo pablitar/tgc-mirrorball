@@ -1,4 +1,4 @@
-#define MAX_DISCO_LIGHTS 25
+#define MAX_DISCO_LIGHTS 9
 
 /**************************************************************************************/
 /* Variables comunes */
@@ -181,7 +181,7 @@ LightingResult calcularLinterna(float3 Nn, float3 viewVector, float3 worldPositi
 }
 
 
-float4 calcularBola(float4 finalColor, float3 worldPosition, float3 worldNormal){
+float4 calcularBola(float4 finalColor, float3 worldPosition, float3 worldNormal, float4 projectedVector){
 
 	float3 ln = normalize(mirrorBallPosition.xyz - worldPosition);
         
@@ -193,7 +193,7 @@ float4 calcularBola(float4 finalColor, float3 worldPosition, float3 worldNormal)
 	
 	for (float i = 0; i < MAX_DISCO_LIGHTS ; i++) {
 
-		float4 finalProjection = mul(worldPosition, matViewProjMirrorBall[i]);
+		float4 finalProjection = mul(projectedVector, matViewProjMirrorBall[i]);
 		
 		float2 projectTexCoord;
 
@@ -247,8 +247,8 @@ struct VS_OUTPUT_VERTEX_COLOR
 	float2 Texcoord : TEXCOORD0;
 	float3 WorldPosition : TEXCOORD1;
 	float3 WorldNormal : TEXCOORD2;	
+	float4 projectedVector : TEXCOORD3;
 	float4 Color : COLOR;
-	
 };
 
 
@@ -269,6 +269,8 @@ VS_OUTPUT_VERTEX_COLOR vs_VertexColor(VS_INPUT_VERTEX_COLOR input)
 	//Posicion pasada a World-Space (necesaria para atenuacior distancia)
 	output.WorldPosition = mul(input.Position, matWorld);
 
+	output.projectedVector = mul(input.Position, matWorld);
+
 	/* Pasar normal a World-Space 
 	Solo queremos rotarla, no trasladarla ni escalarla.
 	Por eso usamos matInverseTransposeWorld en vez de matWorld */
@@ -286,7 +288,7 @@ struct PS_INPUT_VERTEX_COLOR
 	float2 Texcoord : TEXCOORD0;
 	float3 WorldPosition : TEXCOORD1;
 	float3 WorldNormal : TEXCOORD2;
-	
+	float4 projectedVector : TEXCOORD3;
 };
 
 //Pixel Shader
@@ -308,7 +310,7 @@ float4 ps_3SpotYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	float4 finalColor = calcularColorFinal(res0, res1, res2, linterna, texelColor);	
 
 	//BOLA DE ESPEJOS
-	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal, input.projectedVector);
 	
 
 	return finalColor;
@@ -334,7 +336,7 @@ float4 ps_2SpotDiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal, input.projectedVector);
 
 	return finalColor;
 }
@@ -359,7 +361,7 @@ float4 ps_Spot2DiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal, input.projectedVector);
 	
 	return finalColor;
 }
@@ -384,7 +386,7 @@ float4 ps_3DiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 	
 
 	//BOLA DE ESPEJOS
-	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal);
+	finalColor = calcularBola(finalColor, input.WorldPosition, input.WorldNormal, input.projectedVector);
 
 	return finalColor;
 }

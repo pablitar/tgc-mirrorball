@@ -1,4 +1,4 @@
-#define MAX_DISCO_LIGHTS 25
+#define MAX_DISCO_LIGHTS 9
 
 /**************************************************************************************/
 /* Variables comunes */

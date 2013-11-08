@@ -29,7 +29,7 @@ namespace AlumnoEjemplos.RideTheLightning.MirrorBall
         TgcFrustum mirrorBallFrustum;
 
         //Este valor debe modificarse también en el shader. También, debe ser un cuadrado perfecto (16, 25, 36, 49, 64)
-        int numberOfProjections = 25;
+        int numberOfProjections = 9;
 
         //Matrix mirrorBallProjection = Matrix.OrthoLH(2f, 2f, 0.1f, 300f);
 
