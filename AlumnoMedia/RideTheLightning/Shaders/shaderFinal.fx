@@ -148,12 +148,12 @@ LightingResult calcularSpot(int i, float3 Nn, float3 viewVector, float3 worldPos
 //Tos los pixel shaders tienen que tener esta invocacion
 LightingResult calcularLinterna(float3 Nn, float3 viewVector, float3 worldPosition)
 {
-	float3 Ln = normalize(posicionLinterna.xyz - worldPosition);
-	float3 Hn = normalize(viewVector + posicionLinterna.xyz - worldPosition);
+	float3 Ln = normalize(eyePosition.xyz - worldPosition);
+	float3 Hn = normalize(viewVector + eyePosition.xyz - worldPosition);
 	LightingResult res;
 	
 	//Calcular intensidad de luz, con atenuacion por distancia
-	float distAtten =length(posicionLinterna.xyz - worldPosition) * atenuacionLinterna;
+	float distAtten =length(eyePosition.xyz - worldPosition) * atenuacionLinterna;
 
 	float spotAtten = dot(-direccionLinterna.xyz, Ln);
 		spotAtten = (spotAtten > angleCosLinterna )

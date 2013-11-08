@@ -796,12 +796,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 255 </colors>
 		</mesh>
-		<mesh name='luz1' layer='lights' type='Original' matId='-1' color='[177.0,255.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz1' layer='0lights' type='Original' matId='-1' color='[177.0,255.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, 70 ]' max='[-190, 150, 120]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , 0</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -811,12 +815,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 255 </colors>
 		</mesh>
-		<mesh name='luz2' layer='lights' type='Original' matId='-1' color='[177.0,88.0,255.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz2' layer='0lights' type='Original' matId='-1' color='[177.0,88.0,255.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, 190 ]' max='[-190, 350, 240]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , 0</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -826,12 +834,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>23 124 1 </colors>
 		</mesh>
-		<mesh name='luz3' layer='lights' type='Original' matId='-1' color='[255.0,88.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz3' layer='0lights' type='Original' matId='-1' color='[255.0,88.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, 310 ]' max='[-190, 150, 360]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , 0</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -841,12 +853,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 2 124 </colors>
 		</mesh>
-		<mesh name='luz4' layer='lights' type='Original' matId='-1' color='[255.0,255.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz4' layer='0lights' type='Original' matId='-1' color='[255.0,255.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, 430 ]' max='[-190, 350, 480]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -856,12 +872,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>1 255 124 </colors>
 		</mesh>
-		<mesh name='luz5' layer='lights' type='Original' matId='-1' color='[177.0,255.0,255.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz5' layer='0lights' type='Original' matId='-1' color='[177.0,255.0,255.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, 550 ]' max='[-190, 150, 600]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -871,12 +891,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>124 2 255 </colors>
 		</mesh>
-		<mesh name='luz6' layer='lights' type='Original' matId='-1' color='[255.0,88.0,255.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz6' layer='0lights' type='Original' matId='-1' color='[255.0,88.0,255.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, 670 ]' max='[-190, 350, 720]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -886,12 +910,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>124 1 124 </colors>
 		</mesh>
-		<mesh name='luz7' layer='lights' type='Original' matId='-1' color='[0.0,88.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz7' layer='0lights' type='Original' matId='-1' color='[0.0,88.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, 790 ]' max='[-190, 150, 840]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -901,12 +929,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>124 124 124 </colors>
 		</mesh>
-		<mesh name='luz8' layer='lights' type='Original' matId='-1' color='[177.0,0.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz8' layer='0lights' type='Original' matId='-1' color='[177.0,0.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, -70 ]' max='[-190, 350, -120]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -916,12 +948,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 124 255 </colors>
 		</mesh>
-		<mesh name='luz9' layer='lights' type='Original' matId='-1' color='[177.0,88.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz9' layer='0lights' type='Original' matId='-1' color='[177.0,88.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, -190 ]' max='[-190, 150, -240]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -931,12 +967,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 124 124 </colors>
 		</mesh>
-		<mesh name='luz10' layer='lights' type='Original' matId='-1' color='[0.0,0.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz10' layer='0lights' type='Original' matId='-1' color='[0.0,0.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, -290 ]' max='[-190, 350, -340]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>65</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -946,12 +986,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>124 124 255 </colors>
 		</mesh>
-		<mesh name='luz11' layer='lights' type='Original' matId='-1' color='[0.0,88.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz11' layer='0lights' type='Original' matId='-1' color='[0.0,88.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, -410 ]' max='[-190, 150, -460]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , -1</dir>
+        <inten>60</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -961,12 +1005,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>124 255 255 </colors>
 		</mesh>
-		<mesh name='luz12' layer='lights' type='Original' matId='-1' color='[177.0,0.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz12' layer='0lights' type='Original' matId='-1' color='[177.0,0.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, -530 ]' max='[-190, 350, -580]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , -1</dir>
+        <inten>60</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -976,12 +1024,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 124 255 </colors>
 		</mesh>
-		<mesh name='luz13' layer='lights' type='Original' matId='-1' color='[255.0,255.0,255.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz13' layer='0lights' type='Original' matId='-1' color='[255.0,255.0,255.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 100, -650 ]' max='[-190, 150, -700]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , -1</dir>
+        <inten>60</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -991,12 +1043,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 124 </colors>
 		</mesh>
-		<mesh name='luz14' layer='lights' type='Original' matId='-1' color='[128.0,88.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz14' layer='0lights' type='Original' matId='-1' color='[128.0,88.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[-240, 300, -770 ]' max='[-190, 350, -820]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , -1</dir>
+        <inten>60</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1007,12 +1063,16 @@
 			<colors count='3'>124 255 255 </colors>
 		</mesh>
 		
-		<mesh name='luz15' layer='lights' type='Original' matId='-1' color='[177.0,128.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz15' layer='0lights' type='Original' matId='-1' color='[177.0,128.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, 70 ]' max='[190, 150, 120]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>0, -1 , -1</dir>
+        <inten>60</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1022,12 +1082,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 124 </colors>
 		</mesh>
-		<mesh name='luz16' layer='lights' type='Original' matId='-1' color='[177.0,88.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz16' layer='0lights' type='Original' matId='-1' color='[177.0,88.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, 190 ]' max='[190, 350, 240]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1037,12 +1101,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 124 255 </colors>
 		</mesh>
-		<mesh name='luz17' layer='lights' type='Original' matId='-1' color='[177.0,128.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz17' layer='0lights' type='Original' matId='-1' color='[177.0,128.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, 310 ]' max='[190, 150, 360]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1052,12 +1120,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>0 255 255 </colors>
 		</mesh>
-		<mesh name='luz18' layer='lights' type='Original' matId='-1' color='[128.0,128.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz18' layer='0lights' type='Original' matId='-1' color='[128.0,128.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, 430 ]' max='[190, 350, 480]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1067,12 +1139,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 0 255 </colors>
 		</mesh>
-		<mesh name='luz19' layer='lights' type='Original' matId='-1' color='[128.0,88.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz19' layer='0lights' type='Original' matId='-1' color='[128.0,88.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, 550 ]' max='[190, 150, 600]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1082,12 +1158,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 0 </colors>
 		</mesh>
-		<mesh name='luz20' layer='lights' type='Original' matId='-1' color='[128.0,0.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz20' layer='0lights' type='Original' matId='-1' color='[128.0,0.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, 670 ]' max='[190, 350, 720]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1097,12 +1177,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>0 255 255 </colors>
 		</mesh>
-		<mesh name='luz21' layer='lights' type='Original' matId='-1' color='[0.0,128.0,26.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz21' layer='0lights' type='Original' matId='-1' color='[0.0,128.0,26.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, 790 ]' max='[190, 150, 840]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1112,12 +1196,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 0 255 </colors>
 		</mesh>
-		<mesh name='luz22' layer='lights' type='Original' matId='-1' color='[0.0,88.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz22' layer='0lights' type='Original' matId='-1' color='[0.0,88.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, -70 ]' max='[190, 350, -120]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1127,12 +1215,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 0 </colors>
 		</mesh>
-		<mesh name='luz23' layer='lights' type='Original' matId='-1' color='[177.0,0.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz23' layer='0lights' type='Original' matId='-1' color='[177.0,0.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, -190 ]' max='[190, 150, -240]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, 0 , 1</dir>
+        <inten>15</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1142,12 +1234,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>0 255 255 </colors>
 		</mesh>
-		<mesh name='luz24' layer='lights' type='Original' matId='-1' color='[0.0,128.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz24' layer='0lights' type='Original' matId='-1' color='[0.0,128.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, -290 ]' max='[190, 350, -340]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>1, 0 , 1</dir>
+        <inten>100</inten>
+        <atenua>1</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1157,12 +1253,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 0 255 </colors>
 		</mesh>
-		<mesh name='luz25' layer='lights' type='Original' matId='-1' color='[0.0,0.0,128.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz25' layer='0lights' type='Original' matId='-1' color='[0.0,0.0,128.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, -410 ]' max='[190, 150, -460]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>1, 0 , 1</dir>
+        <inten>100</inten>
+        <atenua>1</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1172,12 +1272,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 0 </colors>
 		</mesh>
-		<mesh name='luz26' layer='lights' type='Original' matId='-1' color='[0.0,128.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz26' layer='0lights' type='Original' matId='-1' color='[0.0,128.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, -530 ]' max='[190, 350, -580]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>40</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1187,12 +1291,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>0 255 255 </colors>
 		</mesh>
-		<mesh name='luz27' layer='lights' type='Original' matId='-1' color='[0.0,0.0,246.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz27' layer='0lights' type='Original' matId='-1' color='[0.0,0.0,246.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 100, -650 ]' max='[190, 150, -700]'/>
-			<userProps>
-				<esSpot>NO</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>40</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1202,12 +1310,16 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 0 255 </colors>
 		</mesh>
-		<mesh name='luz28' layer='lights' type='Original' matId='-1' color='[255.0,0.0,0.0]' visibility='1.0' lightmap=''>
+		<mesh name='luz28' layer='0lights' type='Original' matId='-1' color='[255.0,0.0,0.0]' visibility='1.0' lightmap=''>
 			<boundingBox min='[240, 300, -770 ]' max='[190, 350, -820]'/>
-			<userProps>
-				<esSpot>SI</esSpot>
-				<dir>0, -1 , 0</dir>
-			</userProps>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , 0</dir>
+        <inten>40</inten>
+        <atenua>3</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
 			<coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
 			<textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
 			<colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
@@ -1217,5 +1329,24 @@
 			<texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
 			<colors count='3'>255 255 0 </colors>
 		</mesh>
+    <mesh name='luzfede' layer='0lights' type='Original' matId='-1' color='[255.0,0.0,0.0]' visibility='1.0' lightmap=''>
+      <boundingBox min='[0, 30, 0 ]' max='[10, 80, 10]'/>
+      <userProps>
+        <esSpot>SI</esSpot>
+        <dir>-1, -1 , -1</dir>
+        <inten>100</inten>
+        <atenua>1</atenua>
+        <angleCos>39</angleCos>
+        <exp>7</exp>
+      </userProps>
+      <coordinatesIdx count='36'>0 2 3 3 1 0 4 5 7 7 6 4 0 1 5 5 4 0 1 3 7 7 5 1 3 2 6 6 7 3 2 0 4 4 6 2 </coordinatesIdx>
+      <textCoordsIdx count='36'>9 11 10 10 8 9 8 9 11 11 10 8 4 5 7 7 6 4 0 1 3 3 2 0 4 5 7 7 6 4 0 1 3 3 2 0 </textCoordsIdx>
+      <colorsIdx count='36'>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </colorsIdx>
+      <matIds count='1'>0</matIds>
+      <vertices count='24'>-190 300 70 -240 300 70 -190 350 70 -240 350 70 -190 300 120 -240 300 120 -190 350 120 -240 350 120 </vertices>
+      <normals count='108'>0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 </normals>
+      <texCoords count='24'>0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 1.0 0.0 </texCoords>
+      <colors count='3'>255 255 0 </colors>
+    </mesh>
 	</meshes>
 </tgcScene>

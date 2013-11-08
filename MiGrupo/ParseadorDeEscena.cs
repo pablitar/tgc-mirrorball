@@ -69,10 +69,9 @@ namespace AlumnoEjemplos.MiGrupo
                     LightData light = new LightData(meshData);                   
                     lucesZona3.Add(light);
                 } //Es un mesh real, agregar a array definitivo
-                else
-                {
-                    realMeshData.Add(meshData);
-                }
+                
+                realMeshData.Add(meshData);
+                
             }
 
             //Quedaron separados los meshes de las luces. Las luces están separadas por zona.
@@ -104,11 +103,11 @@ namespace AlumnoEjemplos.MiGrupo
                // meshData.mesh.Effect.Technique = elegirTecnica(meshData);
              
                 //separados por zona, no se porqué, capaz para optimizar, no se
-                if (mesh.Layer.Equals(this.zona1))
+                if (mesh.Layer.Contains(this.zona1))
                 {                    
                     meshesZona1.Add(meshData);
                 }
-                else if (mesh.Layer.Equals(this.zona2))
+                else if (mesh.Layer.Contains(this.zona2))
                 {
                     meshesZona2.Add(meshData);
                 }
@@ -117,6 +116,8 @@ namespace AlumnoEjemplos.MiGrupo
                     meshesZona3.Add(meshData);
                 }
             }
+            
+            
 
 
         }
@@ -124,9 +125,12 @@ namespace AlumnoEjemplos.MiGrupo
        
         private List<LightData> seleccionarListaLuces(String layer)
         {
-            if(layer.Equals(this.zona1)){
+            if (layer.Contains(this.zona1))
+            {
                 return lucesZona1;
-            }else if(layer.Equals(this.zona2)){
+            }
+            else if (layer.Contains(this.zona2))
+            {
                 return lucesZona2;
             }else{
                 return lucesZona3;
@@ -139,6 +143,8 @@ namespace AlumnoEjemplos.MiGrupo
             LightData minLight = null;
             List<LightData> result = new List<LightData>();
             List<LightData> lights = seleccionarListaLuces(layer);
+            List<LightData> omni = new List<LightData>();
+            List<LightData> spot = new List<LightData>();
 
             for (int i = 0; i < cant; i++)
             {
@@ -155,11 +161,28 @@ namespace AlumnoEjemplos.MiGrupo
                         minLight = light;
                     }
                 }
-                result.Add(minLight);
+                if (minLight != null &&  minLight.spot)
+                {
+                    spot.Add(minLight);
+                }
+                else
+                {
+                    omni.Add(minLight);
+                }               
+                
                 minDist = float.MaxValue;
             }
+            result.AddRange(spot);
+            result.AddRange(omni);
 
             return result;
+        }
+
+        public void ordenarLuces(List<LightData> lista)
+        {
+            List<LightData> omni = new List<LightData>();
+            List<LightData> spot = new List<LightData>();
+
         }
 
         public String elegirTecnica(MeshLightData mesh)
@@ -174,7 +197,7 @@ namespace AlumnoEjemplos.MiGrupo
             }
             switch (cantSpot){
                 case 0:
-                    if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                    if (mesh.mesh.Layer.Contains(zona1))
                     {
                         resultado = "TRES_DIFFUSE_Y_BOLA";
                     }
@@ -184,7 +207,7 @@ namespace AlumnoEjemplos.MiGrupo
                     }
                     
                     break;
-                case 1: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                case 1: if (mesh.mesh.Layer.Contains(zona1))
                     {
                         resultado = "SPOT_DOS_DIFFUSE_Y_BOLA";
                     }
@@ -193,7 +216,7 @@ namespace AlumnoEjemplos.MiGrupo
                         resultado = "1Spot2Diffuse";
                     }
                     break;
-                case 2: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                case 2: if (mesh.mesh.Layer.Contains(zona1))
                     {
                         resultado = "DOS_SPOT_DIFFUSE_Y_BOLA";
                     }
@@ -202,7 +225,7 @@ namespace AlumnoEjemplos.MiGrupo
                         resultado = "2SpotDiffuse";
                     }
                     break;
-                default: if (mesh.mesh.UserProperties["bolaEspejos"].Equals("SI"))
+                default: if (mesh.mesh.Layer.Contains(zona1))
                     {
                         resultado = "TRES_SPOT_Y_BOLA";
                     }

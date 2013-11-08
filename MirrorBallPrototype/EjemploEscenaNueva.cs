@@ -49,8 +49,10 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             TgcSceneLoader loader = new TgcSceneLoader();
             //Configurar MeshFactory customizado
             parseador = new ParseadorDeEscena();
-            parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
-
+           // parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
+            
+           // parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\", "Deposito-TgcScene.xml");
+            parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
             //Camara en 1ra persona
             
             GuiController.Instance.FpsCamera.Enable = true;
@@ -117,6 +119,7 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
         {
             Plane v = GuiController.Instance.Frustum.NearPlane;
             Vector3 lightPos = GuiController.Instance.FpsCamera.Position;
+          //  Vector3 direccionLinterna = Vector3.Normalize(GuiController.Instance.FpsCamera.LookAt);
             Vector3 direccionLinterna = Vector3.Normalize(new Vector3(v.A, v.B, v.C));
 
             shader.SetValue("angleCosLinterna", FastMath.ToRad((float)GuiController.Instance.Modifiers["angleCosLinterna"]));

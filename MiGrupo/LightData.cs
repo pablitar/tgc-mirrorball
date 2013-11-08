@@ -27,7 +27,7 @@ namespace AlumnoEjemplos.MiGrupo
         
             public LightData(TgcMeshData meshData){
 
-                 this.color = Color.FromArgb((int)meshData.color[0], (int)meshData.color[1], (int)meshData.color[2]);
+                    this.color = parserColor(meshData.userProperties["color"]);
                     this.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
                     this.pos = TgcParserUtils.vector3ToVector4(this.aabb.calculateBoxCenter());
                     this.spot = meshData.userProperties["esSpot"].Equals("SI");
@@ -37,6 +37,13 @@ namespace AlumnoEjemplos.MiGrupo
                     this.angleCos = float.Parse(meshData.userProperties["angleCos"]);
                     this.exp = float.Parse(meshData.userProperties["exp"]);
             }
+
+            public Color parserColor(String colores)
+            {
+                String[] vector = colores.Split(',');
+                return Color.FromArgb(int.Parse(vector[0]), int.Parse(vector[1]), int.Parse(vector[2]));
+            }
+
          public Vector3 convertirDireccion(String dir)
         {
             Vector3 result = new Vector3();
