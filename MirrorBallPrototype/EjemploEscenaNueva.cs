@@ -52,7 +52,8 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
            // parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
             
            // parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\", "Deposito-TgcScene.xml");
-            parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
+          parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
+            //parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\prueba2\\", "pb-TgcScene.xml");
             //Camara en 1ra persona
             
             GuiController.Instance.FpsCamera.Enable = true;
@@ -100,8 +101,8 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             for (int i = 0; i < 3; i++)
             {
                 lightColors[i] = ColorValue.FromColor(mld.lights[i].color);
-                pointLightPositions[i] = mld.lights[i].pos;
-                spotLightDir[i] = mld.lights[i].direccion;
+                pointLightPositions[i] =  TgcParserUtils.vector3ToVector4(mld.lights[i].pos);
+                spotLightDir[i] = TgcParserUtils.vector3ToVector4(mld.lights[i].direccion);
                 pointLightIntensity[i] = mld.lights[i].intencidad;
                 pointLightAttenuation[i] = mld.lights[i].atenuacion;
                 spotLightExponent[i] = mld.lights[i].exp;
@@ -178,6 +179,12 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
         public override void render(float elapsedTime)
         {
             Device device = GuiController.Instance.D3dDevice;
+
+            //mover las luces y los meshes que la representan
+            foreach (LuzRenderizada lz in parseador.lucesARenderizar)
+            {
+                lz.mover(elapsedTime);
+            }
             
 
              //Cargar variables de shader de Material. es el mismo para todos

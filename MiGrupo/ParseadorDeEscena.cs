@@ -33,6 +33,7 @@ namespace AlumnoEjemplos.MiGrupo
       public List<LightData> lucesZona2 = new List<LightData>();
       public List<MeshLightData> meshesZona3 = new List<MeshLightData>();
       public List<LightData> lucesZona3 = new List<LightData>();
+      public List<LuzRenderizada> lucesARenderizar = new List<LuzRenderizada>();
 
 
         public void cargarEscena(String zona1, String zona2, String zona3, String dirEscena, String nombreEscena){
@@ -48,7 +49,7 @@ namespace AlumnoEjemplos.MiGrupo
             TgcSceneData sceneData = parser.parseSceneFromString(File.ReadAllText(scenePath));
 
             //Separar modelos reales de las luces, y las luces según el layeral que pertenecen
-          
+                    
             List<TgcMeshData> realMeshData = new List<TgcMeshData>();
             for (int i = 0; i < sceneData.meshesData.Length; i++)
             {
@@ -58,7 +59,7 @@ namespace AlumnoEjemplos.MiGrupo
                 if (meshData.layerName.Equals(zona1+constLuz))
                 {
                     //Guardar datos de luz de zona 1
-                    LightData light = new LightData(meshData);                   
+                    LightData light = new LightData(meshData);                     
                     lucesZona1.Add(light);
                 }else if(meshData.layerName.Equals(zona2+constLuz)){
                     //Guardar datos de luz de zona 2
@@ -80,7 +81,7 @@ namespace AlumnoEjemplos.MiGrupo
             sceneData.meshesData = realMeshData.ToArray();
 
             //Ahora si cargar meshes reales            
-            TgcSceneLoader loader = new TgcSceneLoader();
+            TgcSceneLoader loader = new TgcSceneLoader();            
             scene = loader.loadScene(sceneData, mediaPath);
             GuiController.Instance.Logger.log("Empieza compilacion de shader", Color.Red);
             shader = TgcShaders.loadEffect(shaderUrl);
@@ -99,9 +100,7 @@ namespace AlumnoEjemplos.MiGrupo
                 meshData.lights = lucesMasCercanas(meshCenter, 3, mesh.Layer);
 
                 meshData.mesh.Effect = shader;
-                //esto debe ser modificado una vez que tengamos la escena para elegir bien las tecnicas
-               // meshData.mesh.Effect.Technique = elegirTecnica(meshData);
-             
+                             
                 //separados por zona, no se porqué, capaz para optimizar, no se
                 if (mesh.Layer.Contains(this.zona1))
                 {                    
@@ -115,6 +114,9 @@ namespace AlumnoEjemplos.MiGrupo
                 {
                     meshesZona3.Add(meshData);
                 }
+               if(mesh.Layer.Contains(constLuz)){
+                   luzEnMovimiento(mesh, lucesMasCercanas(meshCenter, 1, mesh.Layer));
+               }
             }
             
             
@@ -145,6 +147,7 @@ namespace AlumnoEjemplos.MiGrupo
             List<LightData> lights = seleccionarListaLuces(layer);
             List<LightData> omni = new List<LightData>();
             List<LightData> spot = new List<LightData>();
+            
 
             for (int i = 0; i < cant; i++)
             {
@@ -237,8 +240,35 @@ namespace AlumnoEjemplos.MiGrupo
             }
             return resultado;
         }
-      
-        
+
+        public void luzEnMovimiento(TgcMesh mesh, List<LightData> luz)
+        {
+            String nombreMov;
+            try
+            {
+                nombreMov = mesh.UserProperties["mov"];
+            }
+            catch (Exception e)
+            {
+                nombreMov = null;
+            }
+            if (nombreMov == null || nombreMov.Equals("NO"))
+            {
+                return ;
+            }
+            else if (nombreMov.Equals("RotarEjeX"))
+            {
+                lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new RotarEjeX()));
+                return ;
+            }
+            else if (nombreMov.Equals("RotarEjeY"))
+            {
+                lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new RotarEjeY()));
+                return ;
+            }
+
+            
+        }
         
 
     }

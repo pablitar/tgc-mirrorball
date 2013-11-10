@@ -15,11 +15,11 @@ namespace AlumnoEjemplos.MiGrupo
 {
     public class LightData
     {
-        public Vector4 pos;
+        public Vector3 pos;
         public TgcBoundingBox aabb;
         public Color color;
         public Boolean spot;
-        public Vector4 direccion;
+        public Vector3 direccion;
         public float intencidad;
         public float atenuacion;
         public float angleCos;
@@ -29,9 +29,9 @@ namespace AlumnoEjemplos.MiGrupo
 
                     this.color = parserColor(meshData.userProperties["color"]);
                     this.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
-                    this.pos = TgcParserUtils.vector3ToVector4(this.aabb.calculateBoxCenter());
+                    this.pos = this.aabb.calculateBoxCenter();
                     this.spot = meshData.userProperties["esSpot"].Equals("SI");
-                    this.direccion = TgcParserUtils.vector3ToVector4(convertirDireccion(meshData.userProperties["dir"]));
+                    this.direccion = convertirDireccion(meshData.userProperties["dir"]);
                     this.intencidad = float.Parse(meshData.userProperties["inten"]);
                     this.atenuacion = float.Parse(meshData.userProperties["atenua"])/10;
                     this.angleCos = float.Parse(meshData.userProperties["angleCos"]);
