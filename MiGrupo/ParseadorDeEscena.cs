@@ -98,11 +98,12 @@ namespace AlumnoEjemplos.MiGrupo
 
                 Vector3 meshCenter = mesh.BoundingBox.calculateBoxCenter();
                 meshData.lights = lucesMasCercanas(meshCenter, 3, mesh.Layer);
+                
 
                 meshData.mesh.Effect = shader;
                              
                 //separados por zona, no se porqué, capaz para optimizar, no se
-                if (mesh.Layer.Contains(this.zona1))
+                if (mesh.Layer.Equals(this.zona1))
                 {                    
                     meshesZona1.Add(meshData);
                 }
@@ -116,6 +117,7 @@ namespace AlumnoEjemplos.MiGrupo
                 }
                if(mesh.Layer.Contains(constLuz)){
                    luzEnMovimiento(mesh, lucesMasCercanas(meshCenter, 1, mesh.Layer));
+                   meshData.mesh.Position = meshCenter;
                }
             }
             
@@ -250,24 +252,26 @@ namespace AlumnoEjemplos.MiGrupo
             }
             catch (Exception e)
             {
-                nombreMov = null;
+                return;
             }
-            if (nombreMov == null || nombreMov.Equals("NO"))
+            if (nombreMov.Equals("NO"))
             {
                 return ;
             }
             else if (nombreMov.Equals("RotarEjeX"))
             {
+                
                 lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new RotarEjeX()));
-                return ;
+                
             }
             else if (nombreMov.Equals("RotarEjeY"))
             {
+                mesh.AutoTransformEnable = false;
                 lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new RotarEjeY()));
-                return ;
+                
             }
 
-            
+            mesh.AutoTransformEnable = false;
         }
         
 

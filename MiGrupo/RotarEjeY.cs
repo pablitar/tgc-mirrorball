@@ -14,7 +14,9 @@ namespace AlumnoEjemplos.MiGrupo
         {
             Matrix directionRotationMatrix = Matrix.RotationY(FastMath.QUARTER_PI * elapsedTime);
             luz.direccion.TransformCoordinate(directionRotationMatrix);
-            meshLuz.rotateY(FastMath.QUARTER_PI * elapsedTime);          
+            Matrix trans = Matrix.Translation(meshLuz.Position);
+            meshLuz.Transform = directionRotationMatrix ;
+            meshLuz.render();
         }
     }
 }

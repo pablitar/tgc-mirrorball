@@ -835,7 +835,7 @@
         <angleCos>39</angleCos>
         <exp>7</exp>
         <color>255, 124, 0</color>
-        <mov>NO</mov>
+        <mov>RotarEjeY</mov>
       </userProps>
     </mesh>
 	<mesh name="luz2" layer="0lights" type="Original" matId="8" color="[1,1,1]" visibility="1.0" lightmap="">
@@ -860,7 +860,7 @@
         <angleCos>39</angleCos>
         <exp>7</exp>
         <color>0, 0, 255</color>
-        <mov>NO</mov>
+        <mov>RotarEjeY</mov>
       </userProps>
     </mesh>
 		<mesh name="luz3" layer="0lights" type="Original" matId="8" color="[1,1,1]" visibility="1.0" lightmap="">
@@ -885,7 +885,7 @@
         <angleCos>39</angleCos>
         <exp>7</exp>
 		<color>255, 124, 0 </color>
-         <mov>NO</mov>
+         <mov>RotarEjeY</mov>
       </userProps>
     </mesh>
 	<mesh name="luz4" layer="0lights" type="Original" matId="8" color="[1,1,1]" visibility="1.0" lightmap="">
@@ -910,7 +910,7 @@
         <angleCos>39</angleCos>
         <exp>7</exp>
 		<color>255, 124, 0 </color>
-         <mov>NO</mov>
+         <mov>RotarEjeY</mov>
       </userProps>
     </mesh>
 	 <mesh name="Calabera1" layer="0lights" type="Original" matId="9" color="[1,1,1]" visibility="1.0" lightmap="">
@@ -930,7 +930,7 @@
       <userProps count="7">
         <esSpot>SI</esSpot>
         <dir>-1, -1 , 0</dir>
-        <inten>40</inten>
+        <inten>0</inten>
         <atenua>3</atenua>
         <angleCos>39</angleCos>
         <exp>7</exp>
@@ -960,7 +960,7 @@
         <angleCos>39</angleCos>
         <exp>7</exp>
         <color>255, 124, 0</color>
-        <mov>NO</mov>
+        <mov>RotarEjeY</mov>
       </userProps>
     </mesh>
     <mesh name="Calabera3" layer="0lights" type="Original" matId="9" color="[1,1,1]" visibility="1.0" lightmap="">

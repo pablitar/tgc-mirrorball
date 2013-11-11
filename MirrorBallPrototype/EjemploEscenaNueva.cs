@@ -180,11 +180,7 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
         {
             Device device = GuiController.Instance.D3dDevice;
 
-            //mover las luces y los meshes que la representan
-            foreach (LuzRenderizada lz in parseador.lucesARenderizar)
-            {
-                lz.mover(elapsedTime);
-            }
+           
             
 
              //Cargar variables de shader de Material. es el mismo para todos
@@ -221,8 +217,13 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
                 //Renderizar modelo
                 mld.mesh.render();
             }*/
-
-            //Renderizar mesh de luz
+            //mover las luces y los meshes que la representan
+            foreach (LuzRenderizada lz in parseador.lucesARenderizar)
+            {
+                lz.mesh.Technique = "TRES_SPOT_Y_BOLA";
+                lz.mover(elapsedTime);
+            }
+        
           
         }
 
