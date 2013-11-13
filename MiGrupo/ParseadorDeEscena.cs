@@ -195,7 +195,7 @@ namespace AlumnoEjemplos.MiGrupo
             int cantSpot = 0;
             String resultado;
             foreach(LightData ld in mesh.lights){
-                if (ld.spot)
+                if (ld != null && ld.spot)
                 {
                     cantSpot++;
                 }

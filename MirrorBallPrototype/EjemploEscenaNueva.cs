@@ -49,10 +49,10 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             TgcSceneLoader loader = new TgcSceneLoader();
             //Configurar MeshFactory customizado
             parseador = new ParseadorDeEscena();
-           // parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
+            parseador.cargarEscena("hall", "banio", "nada", "\\tgc-mirrorball\\AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
             
            // parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\", "Deposito-TgcScene.xml");
-          parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
+            //parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
             //parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\prueba2\\", "pb-TgcScene.xml");
             //Camara en 1ra persona
             
@@ -100,13 +100,16 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             
             for (int i = 0; i < 3; i++)
             {
-                lightColors[i] = ColorValue.FromColor(mld.lights[i].color);
-                pointLightPositions[i] =  TgcParserUtils.vector3ToVector4(mld.lights[i].pos);
-                spotLightDir[i] = TgcParserUtils.vector3ToVector4(mld.lights[i].direccion);
-                pointLightIntensity[i] = mld.lights[i].intencidad;
-                pointLightAttenuation[i] = mld.lights[i].atenuacion;
-                spotLightExponent[i] = mld.lights[i].exp;
-                spotLightAngleCos[i] = FastMath.ToRad(mld.lights[i].angleCos);
+                if (mld.lights[i] != null)
+                {
+                    lightColors[i] = ColorValue.FromColor(mld.lights[i].color);
+                    pointLightPositions[i] = TgcParserUtils.vector3ToVector4(mld.lights[i].pos);
+                    spotLightDir[i] = TgcParserUtils.vector3ToVector4(mld.lights[i].direccion);
+                    pointLightIntensity[i] = mld.lights[i].intencidad;
+                    pointLightAttenuation[i] = mld.lights[i].atenuacion;
+                    spotLightExponent[i] = mld.lights[i].exp;
+                    spotLightAngleCos[i] = FastMath.ToRad(mld.lights[i].angleCos);
+                }
             }
             effect.SetValue("spotLightAngleCos", spotLightAngleCos);
             effect.SetValue("spotLightExponent", spotLightExponent);
@@ -208,15 +211,16 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
                 
                 //Renderizar modelo
                 mld.mesh.render();
-            }/*
+            }
             foreach (MeshLightData mld in parseador.meshesZona2)
             {
                 configurarLuces(mld);
-                mld.mesh.Technique = parseador.elegirTecnica(mld);
+                configurarLinterna(mld.mesh.Effect);
+                mld.mesh.Technique = "TRES_DIFFUSE_Y_BOLA";// parseador.elegirTecnica(mld);
                 
                 //Renderizar modelo
                 mld.mesh.render();
-            }*/
+            }
             //mover las luces y los meshes que la representan
             foreach (LuzRenderizada lz in parseador.lucesARenderizar)
             {

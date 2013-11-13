@@ -89,10 +89,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MiGrupo\EjemploAlumno.cs" />
+    <Compile Include="MiGrupo\EjemploSpotLight.cs" />
     <Compile Include="MiGrupo\LightData.cs" />
+    <Compile Include="MiGrupo\LuzRenderizada.cs" />
     <Compile Include="MiGrupo\MeshLightData.cs" />
     <Compile Include="MiGrupo\MirrorBall3Spot.cs" />
+    <Compile Include="MiGrupo\Movimiento.cs" />
     <Compile Include="MiGrupo\ParseadorDeEscena.cs" />
+    <Compile Include="MiGrupo\RotarEjeX.cs" />
+    <Compile Include="MiGrupo\RotarEjeY.cs" />
     <Compile Include="MirrorBallPrototype\EjemploEscenaNueva.cs" />
     <Compile Include="MirrorBallPrototype\EjemploMirrorBall.cs" />
     <Compile Include="MultipassPrototype\Lights.cs" />
@@ -104,7 +109,7 @@
     <Compile Include="RideTheLightning\RTLLight.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TgcViewer\TgcViewer.csproj">
+    <ProjectReference Include="..\..\TgcViewer\TgcViewer.csproj">
       <Project>{990E714F-7FF2-4A87-86B1-E5FC8D4C2F4C}</Project>
       <Name>TgcViewer</Name>
     </ProjectReference>

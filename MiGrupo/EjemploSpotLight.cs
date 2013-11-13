@@ -89,7 +89,7 @@ namespace Examples.Lights
                 if (meshData.layerName == "lights")
                 {
                     //Guardar datos de luz
-                    LightData light = new LightData();
+                    LightData light = new LightData(meshData);
                     light.color = Color.FromArgb((int)meshData.color[0], (int)meshData.color[1], (int)meshData.color[2]);
                     light.aabb = new TgcBoundingBox(TgcParserUtils.float3ArrayToVector3(meshData.pMin), TgcParserUtils.float3ArrayToVector3(meshData.pMax));
                     light.pos = light.aabb.calculateBoxCenter();
