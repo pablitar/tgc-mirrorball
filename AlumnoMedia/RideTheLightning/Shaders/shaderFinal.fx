@@ -392,6 +392,88 @@ float4 ps_3DiffuseYEspejos(PS_INPUT_VERTEX_COLOR input) : COLOR0
 }
 
 
+//Pixel Shader
+float4 ps_3Diffuse(PS_INPUT_VERTEX_COLOR input) : COLOR0
+{      
+	
+	float3 Nn = normalize(input.WorldNormal);
+	float3 viewVector = eyePosition.xyz - input.WorldPosition;
+	LightingResult res0 =  calcularDiffuse(0, Nn, viewVector, input.WorldPosition);
+	LightingResult res1 =  calcularDiffuse(1, Nn, viewVector, input.WorldPosition);
+	LightingResult res2 =  calcularDiffuse(2, Nn, viewVector, input.WorldPosition);
+	LightingResult linterna =  calcularLinterna( Nn, viewVector, input.WorldPosition);
+	
+	//Obtener texel de la textura
+	float4 texelColor = tex2D(diffuseMap, input.Texcoord);
+
+	//Color final: modular (Emissive + Ambient + Diffuse) por el color de la textura, y luego sumar Specular.
+	//El color Alpha sale del diffuse material
+	float4 finalColor = calcularColorFinal(res0, res1, res2, linterna, texelColor);	
+	
+	return finalColor;
+}
+//Pixel Shader
+float4 ps_3Spot(PS_INPUT_VERTEX_COLOR input) : COLOR0
+{      
+	
+	float3 Nn = normalize(input.WorldNormal);
+	float3 viewVector = eyePosition.xyz - input.WorldPosition;
+	LightingResult res0 =  calcularSpot(0, Nn, viewVector, input.WorldPosition);
+	LightingResult res1 =  calcularSpot(1, Nn, viewVector, input.WorldPosition);
+	LightingResult res2 =  calcularSpot(2, Nn, viewVector, input.WorldPosition);
+	LightingResult linterna =  calcularLinterna( Nn, viewVector, input.WorldPosition);
+	
+	//Obtener texel de la textura
+	float4 texelColor = tex2D(diffuseMap, input.Texcoord);
+
+	//Color final: modular (Emissive + Ambient + Diffuse) por el color de la textura, y luego sumar Specular.
+	//El color Alpha sale del diffuse material
+	float4 finalColor = calcularColorFinal(res0, res1, res2, linterna, texelColor);	
+	
+	return finalColor;
+}
+//Pixel Shader
+float4 ps_2Spot1Diffuse(PS_INPUT_VERTEX_COLOR input) : COLOR0
+{      
+	
+	float3 Nn = normalize(input.WorldNormal);
+	float3 viewVector = eyePosition.xyz - input.WorldPosition;
+	LightingResult res0 =  calcularSpot(0, Nn, viewVector, input.WorldPosition);
+	LightingResult res1 =  calcularSpot(1, Nn, viewVector, input.WorldPosition);
+	LightingResult res2 =  calcularDiffuse(2, Nn, viewVector, input.WorldPosition);
+	LightingResult linterna =  calcularLinterna( Nn, viewVector, input.WorldPosition);
+	
+	//Obtener texel de la textura
+	float4 texelColor = tex2D(diffuseMap, input.Texcoord);
+
+	//Color final: modular (Emissive + Ambient + Diffuse) por el color de la textura, y luego sumar Specular.
+	//El color Alpha sale del diffuse material
+	float4 finalColor = calcularColorFinal(res0, res1, res2, linterna, texelColor);	
+	
+	return finalColor;
+}
+//Pixel Shader
+float4 ps_1Spot2Diffuse(PS_INPUT_VERTEX_COLOR input) : COLOR0
+{      
+	
+	float3 Nn = normalize(input.WorldNormal);
+	float3 viewVector = eyePosition.xyz - input.WorldPosition;
+	LightingResult res0 =  calcularSpot(0, Nn, viewVector, input.WorldPosition);
+	LightingResult res1 =  calcularDiffuse(2, Nn, viewVector, input.WorldPosition);
+	LightingResult res2 =  calcularDiffuse(2, Nn, viewVector, input.WorldPosition);
+	LightingResult linterna =  calcularLinterna( Nn, viewVector, input.WorldPosition);
+	
+	//Obtener texel de la textura
+	float4 texelColor = tex2D(diffuseMap, input.Texcoord);
+
+	//Color final: modular (Emissive + Ambient + Diffuse) por el color de la textura, y luego sumar Specular.
+	//El color Alpha sale del diffuse material
+	float4 finalColor = calcularColorFinal(res0, res1, res2, linterna, texelColor);	
+	
+	return finalColor;
+}
+
+
 
 
 Technique TRES_SPOT_Y_BOLA
@@ -426,11 +508,36 @@ Technique TRES_SPOT_Y_BOLA
 	  PixelShader = compile ps_3_0 ps_3DiffuseYEspejos();
    }
  }
-  Technique TRES_DIFFUSE_Y_SPOT
-{
+
+ Technique TRES_DIFFUSE
+ {
    pass Pass_0
    {
 	  VertexShader = compile vs_3_0 vs_VertexColor();
-	  PixelShader = compile ps_3_0 ps_3DiffuseYEspejos();
+	  PixelShader = compile ps_3_0 ps_3Diffuse();
+   }
+ }
+ Technique TRES_SPOT
+ {
+   pass Pass_0
+   {
+	  VertexShader = compile vs_3_0 vs_VertexColor();
+	  PixelShader = compile ps_3_0 ps_3Spot();
+   }
+ }
+ Technique UN_SPOT_DOS_DIFFUSE
+ {
+   pass Pass_0
+   {
+	  VertexShader = compile vs_3_0 vs_VertexColor();
+	  PixelShader = compile ps_3_0 ps_1Spot2Diffuse();
+   }
+ }
+ Technique DOS_SPOT_UN_DIFFUSE
+ {
+   pass Pass_0
+   {
+	  VertexShader = compile vs_3_0 vs_VertexColor();
+	  PixelShader = compile ps_3_0 ps_2Spot1Diffuse();
    }
  }

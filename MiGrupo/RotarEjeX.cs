@@ -12,10 +12,15 @@ namespace AlumnoEjemplos.MiGrupo
     {
         public void mover(LightData luz, TgcMesh meshLuz, float elapsedTime)
         {
-            float rot = FastMath.QUARTER_PI * elapsedTime;
-            Matrix directionRotationMatrix = Matrix.RotationX(rot);
-            luz.pos.TransformCoordinate(directionRotationMatrix);
-            meshLuz.rotateX(rot);
+            Matrix directionRotationMatrix = Matrix.RotationX(FastMath.QUARTER_PI * elapsedTime);
+            luz.direccion.TransformCoordinate(directionRotationMatrix);
+
+            Matrix trans = Matrix.Translation(meshLuz.Position);
+            Matrix trasp = Matrix.Invert(trans);
+
+            meshLuz.Transform = Matrix.Multiply(trasp, directionRotationMatrix) * trans * meshLuz.Transform;
+
+            meshLuz.render();
         }
     }
 }

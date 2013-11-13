@@ -49,10 +49,10 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             TgcSceneLoader loader = new TgcSceneLoader();
             //Configurar MeshFactory customizado
             parseador = new ParseadorDeEscena();
-           // parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
-            
+            //parseador.cargarEscena("hall", "banio", "nada", "AlumnoMedia\\ScenesParts\\", "boxes-TgcScene.xml");
+            parseador.cargarEscena("hall", "banio", "todo", "AlumnoMedia\\RideTheLightning\\Scenes\\bartot\\", "BarTot-TgcScene.xml");
            // parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\Deposito\\", "Deposito-TgcScene.xml");
-          parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
+        //  parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\DepositoNL\\", "Deposito-TgcScene.xml");
             //parseador.cargarEscena("0", "banio", "nada", "AlumnoMedia\\RideTheLightning\\Scenes\\prueba2\\", "pb-TgcScene.xml");
             //Camara en 1ra persona
             
@@ -208,15 +208,24 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
                 
                 //Renderizar modelo
                 mld.mesh.render();
-            }/*
+            }
             foreach (MeshLightData mld in parseador.meshesZona2)
             {
                 configurarLuces(mld);
+                configurarLinterna(mld.mesh.Effect);
                 mld.mesh.Technique = parseador.elegirTecnica(mld);
-                
+
                 //Renderizar modelo
                 mld.mesh.render();
-            }*/
+            } 
+            foreach (MeshLightData mld in parseador.meshesZona3)
+            {
+                configurarLuces(mld);
+                mld.mesh.Technique = parseador.elegirTecnica(mld);
+
+                //Renderizar modelo
+                mld.mesh.render();
+            }
             //mover las luces y los meshes que la representan
             foreach (LuzRenderizada lz in parseador.lucesARenderizar)
             {

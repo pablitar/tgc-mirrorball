@@ -156,7 +156,7 @@ namespace AlumnoEjemplos.MiGrupo
                 foreach (LightData light in lights)
                 {
                     //Ignorar las luces ya agregadas
-                    if (result.Contains(light))
+                    if (spot.Contains(light) || omni.Contains(light))
                         continue;
 
                     float distSq = Vector3.LengthSq(pos - new Vector3(light.pos.X, light.pos.Y, light.pos.Z));
@@ -194,49 +194,51 @@ namespace AlumnoEjemplos.MiGrupo
         {
             int cantSpot = 0;
             String resultado;
-            foreach(LightData ld in mesh.lights){
+            foreach (LightData ld in mesh.lights)
+            {
                 if (ld.spot)
                 {
                     cantSpot++;
                 }
             }
-            switch (cantSpot){
+            switch (cantSpot)
+            {
                 case 0:
-                    if (mesh.mesh.Layer.Contains(zona1))
+                    if (mesh.mesh.Layer.Contains(zona1) || mesh.mesh.Layer.Contains(zona3))
                     {
                         resultado = "TRES_DIFFUSE_Y_BOLA";
                     }
                     else
                     {
-                        resultado = "3Diffuse";
+                        resultado = "TRES_DIFFUSE";
                     }
-                    
+
                     break;
-                case 1: if (mesh.mesh.Layer.Contains(zona1))
+                case 1: if (mesh.mesh.Layer.Contains(zona1) || mesh.mesh.Layer.Contains(zona3))
                     {
                         resultado = "SPOT_DOS_DIFFUSE_Y_BOLA";
                     }
                     else
                     {
-                        resultado = "1Spot2Diffuse";
+                        resultado = "UN_SPOT_DOS_DIFFUSE";
                     }
                     break;
-                case 2: if (mesh.mesh.Layer.Contains(zona1))
+                case 2: if (mesh.mesh.Layer.Contains(zona1) || mesh.mesh.Layer.Contains(zona3))
                     {
                         resultado = "DOS_SPOT_DIFFUSE_Y_BOLA";
                     }
                     else
                     {
-                        resultado = "2SpotDiffuse";
+                        resultado = "DOS_SPOT_UN_DIFFUSE";
                     }
                     break;
-                default: if (mesh.mesh.Layer.Contains(zona1))
+                default: if (mesh.mesh.Layer.Contains(zona1) || mesh.mesh.Layer.Contains(zona3))
                     {
                         resultado = "TRES_SPOT_Y_BOLA";
                     }
                     else
                     {
-                        resultado = "3Spot";
+                        resultado = "TRES_SPOT";
                     }
                     break;
             }
@@ -246,12 +248,14 @@ namespace AlumnoEjemplos.MiGrupo
         public void luzEnMovimiento(TgcMesh mesh, List<LightData> luz)
         {
             String nombreMov;
+            mesh.AutoTransformEnable = false;
             try
             {
                 nombreMov = mesh.UserProperties["mov"];
             }
             catch (Exception e)
             {
+                lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new NoMover()));
                 return;
             }
             if (nombreMov.Equals("NO"))
@@ -265,13 +269,12 @@ namespace AlumnoEjemplos.MiGrupo
                 
             }
             else if (nombreMov.Equals("RotarEjeY"))
-            {
-                mesh.AutoTransformEnable = false;
+            {                
                 lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new RotarEjeY()));
                 
             }
-
-            mesh.AutoTransformEnable = false;
+            lucesARenderizar.Add(new LuzRenderizada(mesh, luz[0], new NoMover()));
+           
         }
         
 
