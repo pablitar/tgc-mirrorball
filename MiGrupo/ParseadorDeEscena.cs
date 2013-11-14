@@ -21,6 +21,7 @@ namespace AlumnoEjemplos.MiGrupo
         String zona2 = "";
         String zona3 = "";
         String constLuz = "lights";
+        public MeshLightData mirrorBall;
         
        // String shaderUrl = GuiController.Instance.AlumnoEjemplosMediaDir + "Shaders\\shaderIntegrador.fx";
        String shaderUrl = GuiController.Instance.AlumnoEjemplosMediaDir + "RideTheLightning\\Shaders\\shaderFinal.fx";
@@ -88,6 +89,7 @@ namespace AlumnoEjemplos.MiGrupo
             GuiController.Instance.Logger.log("Fin compilacion de shader", Color.Red);
             shader.SetValue("mirrorBallTexture", TextureLoader.FromFile(GuiController.Instance.D3dDevice, GuiController.Instance.AlumnoEjemplosMediaDir + "\\mirrorBallLights.png"));
 
+
             //Pre-calculamos las 3 luces mas cercanas de cada mesh y cargamos el Shader
             
             foreach (TgcMesh mesh in scene.Meshes)
@@ -107,12 +109,15 @@ namespace AlumnoEjemplos.MiGrupo
                 {                    
                     meshesZona1.Add(meshData);
                 }
-                else if (mesh.Layer.Contains(this.zona2))
-                {
+                else if (mesh.Layer.Equals(this.zona2))
+                {                    
                     meshesZona2.Add(meshData);
                 }
-                else
+                else if (mesh.Name.Equals("bola"))
                 {
+                    createMirrorBall(mesh);
+                }else
+                {                    
                     meshesZona3.Add(meshData);
                 }
                if(mesh.Layer.Contains(constLuz)){
@@ -125,7 +130,52 @@ namespace AlumnoEjemplos.MiGrupo
 
 
         }
+        private void createMirrorBall(TgcMesh bola)
+        {   
+            //para que sea menos costoso de encontrar lo ponemos en un layer especial
+            
+            
+            bola.Layer = "hall";
+            this.mirrorBall = new MeshLightData();
+            this.mirrorBall.mesh = bola;
+        }
 
+        public void configureMirrorBall(Vector3 posicion)
+        {
+            this.mirrorBall.mesh.Position = posicion;
+            Vector3 meshCenter = this.mirrorBall.mesh.BoundingBox.calculateBoxCenter();
+            this.mirrorBall.lights = lucesMasCercanas(meshCenter, 3, this.mirrorBall.mesh.Layer);
+            this.mirrorBall.mesh.Effect = shader;
+            this.mirrorBall.mesh.Technique = elegirTecnicaMirrorBall();
+        }
+        public String elegirTecnicaMirrorBall()
+        {
+            int cantSpot = 0;
+            String resultado;
+            foreach (LightData ld in this.mirrorBall.lights)
+            {
+                if (ld.spot)
+                {
+                    cantSpot++;
+                }
+            }
+            switch (cantSpot)
+            {
+                case 0:
+                       resultado = "TRES_DIFFUSE";
+                       break;
+                case 1:
+                        resultado = "UN_SPOT_DOS_DIFFUSE";
+                        break;
+                case 2:
+                        resultado = "DOS_SPOT_UN_DIFFUSE";
+                        break;
+                default:                     
+                        resultado = "TRES_SPOT";                    
+                        break;
+            }
+            return resultado;
+        }
        
         private List<LightData> seleccionarListaLuces(String layer)
         {

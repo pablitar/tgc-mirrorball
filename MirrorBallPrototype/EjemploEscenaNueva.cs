@@ -174,6 +174,9 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
 
             shader.SetValue("mirrorBallAttenuation", (float)GuiController.Instance.Modifiers["mirrorBallAttenuation"]);
             shader.SetValue("mirrorBallIntensity", (float)GuiController.Instance.Modifiers["mirrorBallIntensity"]);
+
+            parseador.configureMirrorBall((Vector3)GuiController.Instance.Modifiers["mirrorBallPosition"]);
+            
         }
 
         public override void render(float elapsedTime)
@@ -198,6 +201,11 @@ namespace AlumnoEjemplos.RideTheLightning.Lights
             Matrix[] viewProjMatrix = getMirrorBallViewProjMatrix();
             configurarBola(parseador.shader, viewProjMatrix);
             configurarLinterna(parseador.shader);
+
+            //roto y renderizo la bola es el único mesh que busca influencia de luces de forma dinamica
+            parseador.mirrorBall.mesh.rotateY(FastMath.QUARTER_PI * elapsedTime);
+            configurarLuces(parseador.mirrorBall);
+            parseador.mirrorBall.mesh.render();
             
             //Renderizar meshes
             foreach (MeshLightData mld in parseador.meshesZona1)
